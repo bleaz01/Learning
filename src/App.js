@@ -1,4 +1,5 @@
 import './App.css';
+import Input from './Components/Item/Input/Input';
 import NavBar from './Components/NavBar/NavBar';
 import Home from './Components/view/Home/Home';
 
@@ -11,7 +12,8 @@ function App() {
         </div>
         <div className="App-container">
           <div className="App-main">
-            <Home/>
+            {/* <TextInput></TextInput> */}
+            {/* <Home/> */}
           </div>
           <div clasName="App-sideBar">
             sidebar
