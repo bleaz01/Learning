@@ -1,0 +1,39 @@
+.Container{
+    display: flex;
+    flex-direction: row;
+    background-color:#D74106;
+    max-height: 70px;
+    opacity: 0.8;
+    padding: 5px 10px;
+}
+
+.Main{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.ImgLang{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: beige;
+}
+
+.Forms{
+    border-radius: 5% 5% ;
+    background: #fff;
+}
+
+.Nav-Items{
+    background-color: #fff;
+}
+
+.Items{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.Item{
+    display: inline;
+}
