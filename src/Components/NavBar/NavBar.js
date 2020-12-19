@@ -1,5 +1,5 @@
 import React,{ useState }from 'react';
-
+import {Link, Router} from "react-router-dom";
 //StyleSheet
 import './NavBarStyleSheet.scss';
 
@@ -19,7 +19,11 @@ const NavBar = ()=>{
     ])
 
     const items = listItems.map((item)=>{
-        return  <li className='Item'>{item}</li>
+        return (
+                <li className='Item'>
+                    <Link to={'/'+item}item>{item}</Link>
+                </li>  
+             )    
     });
 
     return(
@@ -32,11 +36,6 @@ const NavBar = ()=>{
             </div>
             <div className='Nav-Items'>
                 <ul className='Items'>{items}</ul>
-                {/* <ul className='Items'>
-                    <li className='Item'>juli</li>
-                    <li className='Item'>juli</li>
-                    <li className='Item'>julikkk</li>
-                </ul> */}
             </div>
                 <img className='ImgLang' src={login}></img>
         </div>

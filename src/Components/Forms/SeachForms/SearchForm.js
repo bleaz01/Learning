@@ -15,15 +15,14 @@ const SearchForm = ()=>{
     console.log(watch("search")); // watch input value by passing the name of it
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="Container">
-               
+        <div className="Container">
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <input style={{border: 'none', height:"100%" ,width:"100%", borderRadius:"30px 30px 30px 30px", padding:"2% 5%"}} 
                 name="search" 
                 defaultValue="test" 
                 ref={register} />
-            </div>    
-        </form>  
+            </form>  
+         </div> 
     )
 }
 
