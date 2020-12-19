@@ -4,18 +4,19 @@ import React from 'react';
 //component
 import Card from '../../Item/Card/Card';
 
-import img from '../../../assets/jeason.jpg'
+import img from '../../../assets/houseTheme.jpg'
 import './VocabularyStyleSheet.scss'
+
 
 const Vocabulary = ()=>{
     return (
         <div className='Voc-container'>
             <div className='Voc-header'>
-               <Card
-                cardHeader='salut'
+               {/* <Card
+                cardHeader='Thuis'
                 imgCard={img}
-                cardFooter='ddd'
-               />
+                cardFooter='check'
+               /> */}
             </div>
             <div className='Voc-body'>
                 k
