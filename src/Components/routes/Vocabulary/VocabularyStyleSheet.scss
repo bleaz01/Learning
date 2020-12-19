@@ -1,0 +1,17 @@
+.Voc-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .Voc-header{
+        min-height: 300px;
+        flex-basis: 40vh;
+
+    }
+
+    .Voc-body{
+        flex-basis: 60vh;
+        background-color: black;
+
+    }
+}

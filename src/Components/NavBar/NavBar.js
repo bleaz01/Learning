@@ -21,7 +21,7 @@ const NavBar = ()=>{
     const items = listItems.map((item)=>{
         return (
                 <li className='Item'>
-                    <Link to={'/'+item}item>{item}</Link>
+                    <Link style={{textDecoration:'none'}}to={'/'+item}item>{item}</Link>
                 </li>  
              )    
     });

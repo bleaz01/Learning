@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import './App.css';
+import './App.scss';
 import NavBar from './Components/NavBar/NavBar';
 
 //Routes
@@ -16,39 +16,35 @@ function App() {
   return (
     <div className="App">
       <Router>
-      <header className="App-header">
-        <div className="App-Nav">
+        <header className="App-header">
           <NavBar/>
-        </div>
-        <div className="App-container">
-          <div clasName="App-sideBar">
-            sidebar
+        </header>
+        <div className="App-main">
+          <div className="App-sidebar"> 
+              sidebar
           </div>
-          <div className="App-main">
-          
-              <Suspense fallback={<div>Chargement...</div>}>
-                <Switch>
-                  <Route exact path="/">
-                    <Home/>
-                  </Route>
-                  <Route path="/Spelletjes">
-                    <Games/>
-                  </Route>
-                  <Route path="/Verbum">
-                    <Verbs/>
-                  </Route>
-                  <Route path="/Woordenschat">
-                    <Vocabulary/>
-                  </Route>
-                </Switch>
-              </Suspense>
-             
+          <div className="App-container">
+            <Suspense fallback={<div>Chargement...</div>}>
+              <Switch>
+                <Route exact path="/">
+                  <Home/>
+                </Route>
+                <Route path="/Spelletjes">
+                  <Games/>
+                </Route>
+                <Route path="/Verbum">
+                  <Verbs/>
+                </Route>
+                <Route path="/Woordenschat">
+                  <Vocabulary/>
+                </Route>
+              </Switch>
+            </Suspense>   
           </div>
         </div>
-        <div className="App-footer">
+        <footer className="App-footer">
           footer
-        </div>
-      </header>
+        </footer>
       </Router>
     </div>
   );
