@@ -15,7 +15,8 @@ const NavBar = ()=>{
         'Spelletjes', 
         'Conversatie',
         'Woordenschat',
-        'Verbum'
+        'Verbum',
+        'Structure'
     ])
 
     const items = listItems.map((item)=>{

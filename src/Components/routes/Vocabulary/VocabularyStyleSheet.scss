@@ -2,10 +2,17 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-
+   
     .Voc-header{
         min-height: 300px;
         flex-basis: 40vh;
+        background-image: url('../../../assets/vocabularyHeader.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
 
     }
 

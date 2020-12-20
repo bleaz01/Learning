@@ -12,11 +12,11 @@ const Vocabulary = ()=>{
     return (
         <div className='Voc-container'>
             <div className='Voc-header'>
-               {/* <Card
+               <Card
                 cardHeader='Thuis'
                 imgCard={img}
                 cardFooter='check'
-               /> */}
+               />
             </div>
             <div className='Voc-body'>
                 k
