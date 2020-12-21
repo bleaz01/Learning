@@ -1,0 +1,19 @@
+.Msg-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .Msg-header{
+        flex-basis: 10%;
+    }
+
+    .Msg-content{
+        flex-basis: 65%;
+        background-color: aqua;
+    }
+    .Msg-footer{
+        flex-basis: 25%;
+    }
+
+}

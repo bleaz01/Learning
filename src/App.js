@@ -10,6 +10,7 @@ const Home = lazy(() => import('./Components/routes/Home/Home'));
 const Games = lazy(() => import('./Components/routes/Games/Games'));
 const Verbs = lazy(() => import('./Components/routes/Verbs/Verbs'));
 const Vocabulary = lazy(() => import('./Components/routes/Vocabulary/Vocabulary'));
+const Messenger = lazy(() => import('./Components/routes/Messenger/Messenger'));
 
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
                 </Route>
                 <Route path="/Woordenschat">
                   <Vocabulary/>
+                </Route>
+                <Route path="/Conversatie">
+                 <Messenger/>
                 </Route>
               </Switch>
             </Suspense>   
