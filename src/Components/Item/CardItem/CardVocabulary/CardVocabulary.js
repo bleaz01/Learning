@@ -1,9 +1,9 @@
 import React from 'react'
 
-const VocabularyItem = () =>{
+const CardVocabulary = () =>{
     return(
         <div></div>
     )
 }
 
-export default VocabularyItem
+export default CardVocabulary

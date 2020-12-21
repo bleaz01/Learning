@@ -6,12 +6,16 @@ const FormBase = (props) =>{
 
     const { register, handleSubmit, watch, errors } = useForm();
 
+    // console.log(watch("search")); // watch input value by passing the name of it
+
+
     const 
     {
         onSubmit, 
         StyleForm, 
         name , 
-        defaultValue
+        defaultValue,
+        placeholder
 
     } = props
 
@@ -21,6 +25,7 @@ const FormBase = (props) =>{
              <form className={StyleForm} onSubmit={handleSubmit(onSubmit)}>
                 <input 
                     className={'FormBase-input'}
+                    placeholder={placeholder}
                     name={'tes'&& name} 
                     defaultValue={defaultValue && 'test'} 
                     ref={register} />

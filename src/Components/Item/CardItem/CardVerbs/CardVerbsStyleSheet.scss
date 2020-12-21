@@ -1,0 +1,46 @@
+.CardVerbs-container{
+    width: 270px;
+    height: 270px;
+    background-color: rgba(151, 140, 140, 0.445);
+    border-radius: 30px 30px;
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+
+    .CardVerbs-header{
+
+        // h5{
+        //     text-align: center;
+        // }
+
+    }
+    .CardVerbs-content{
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        
+        
+
+        .CardVerbs-list{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            padding: 0px 10px;
+            
+            
+            .sub{
+                flex-basis: 30%;
+                opacity: 0.5;
+            }
+    
+            .verb{
+                flex-basis: 70%;
+            }
+        }
+
+    }
+    
+}
