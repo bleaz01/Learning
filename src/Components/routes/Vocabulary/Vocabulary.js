@@ -1,5 +1,9 @@
+// @ts-nocheck
 
-import React from 'react';
+import React,{useEffect,useState} from 'react';
+import useAxios from 'axios-hooks'
+
+
 
 //component
 import Card from '../../Item/Card/Card';
@@ -9,17 +13,49 @@ import './VocabularyStyleSheet.scss'
 
 
 const Vocabulary = ()=>{
+
+    const [listData, setListData ] = useState();
+    const [activity, setActivity] = useState()
+
+   
+    const [{ data, loading, error }, refetch] = useAxios(
+        'http://localhost:3000/api/vocabulary/1'
+        )
+    
+    useEffect(()=>{
+
+        setListData(data);
+        // setActivity( Object.keys(data));
+           
+    })
+    
+   
+
+    // const listActivity = listData.house.map((activity) =>{
+    //     return (
+    //         <Card
+    //             cardHeader={activity}
+    //             imgCard={img}
+    //             cardFooter='check'
+    //         />
+    //    )
+    // });
     return (
         <div className='Voc-container'>
             <div className='Voc-header'>
-               <Card
-                cardHeader='Thuis'
-                imgCard={img}
-                cardFooter='check'
-               />
+            {data && Object.keys(data).map((activity)=>{
+                return (
+                    <Card
+                        cardHeader={activity}
+                        imgCard={img}
+                        cardFooter='check'
+                    />
+               )
+             })}
             </div>
             <div className='Voc-body'>
-                k
+                {/* <pre>{listData}</pre> */}
+
             </div>
         </div>
     )

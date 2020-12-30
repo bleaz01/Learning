@@ -2,22 +2,21 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 
 import './FormsBaseStyleSheet.scss'
-const FormBase = (props) =>{
+const FormBase = ( {
+    onSubmit, 
+    StyleForm, 
+    name , 
+    defaultValue,
+    placeholder
+
+}) =>{
 
     const { register, handleSubmit, watch, errors } = useForm();
 
     // console.log(watch("search")); // watch input value by passing the name of it
 
 
-    const 
-    {
-        onSubmit, 
-        StyleForm, 
-        name , 
-        defaultValue,
-        placeholder
-
-    } = props
+    
 
 
     return(

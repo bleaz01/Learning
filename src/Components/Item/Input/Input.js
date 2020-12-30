@@ -3,10 +3,10 @@ import React from "react";
 
 import Style from './InputStyleSheet.scss';
 
-const Input = ( name, ref,defaultValue) =>{
+const Input = ( name, ref, defaultValue) =>{
 
     return (
-        <input  name={name} defaultValue={defaultValue} ref={ref} />
+        <input name={name} defaultValue={defaultValue} ref={ref} />
 
     )
 
