@@ -12,6 +12,7 @@ const NavBar = ()=>{
     const [langImg, setLangImg] = useState(ndl);
     const [loginImg, setLoginImg] = useState(login)
     const [listItems, setListItems] = useState([
+        'home',
         'Spelletjes', 
         'Conversatie',
         'Woordenschat',
@@ -21,8 +22,10 @@ const NavBar = ()=>{
 
     const items = listItems.map((item)=>{
         return (
+            
                 <li className='Item'>
-                    <Link style={{textDecoration:'none'}}to={'/'+item}item>{item}</Link>
+                    
+                    <Link style={{textDecoration:'none'}}to={'/'+ item }>{item}</Link>
                 </li>  
              )    
     });

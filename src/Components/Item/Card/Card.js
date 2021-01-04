@@ -3,7 +3,7 @@ import React,{useState} from 'react';
 import './CardStyleSheet.scss'
 const Card = (props) =>{
 
-    const {cardHeader, imgCard, cardFooter} = props
+    const {cardHeader, imgCard, cardFooter, href} = props
 
     return (
         <div  className='Card-container'>
@@ -11,7 +11,7 @@ const Card = (props) =>{
                 {cardHeader}
             </div>
             <div className='Card-body'>
-                <a src='#'>
+                <a href={href}>
                     <img src={imgCard} className='Card-img'/>
                 </a>
             </div>

@@ -27,7 +27,7 @@ function App() {
           <div className="App-container">
             <Suspense fallback={<div>Chargement...</div>}>
               <Switch>
-                <Route exact path="/">
+                <Route exact path={"/home"}>
                   <Home/>
                 </Route>
                 <Route path="/Spelletjes">
@@ -36,7 +36,7 @@ function App() {
                 <Route path="/Verbum">
                   <Verbs/>
                 </Route>
-                <Route path="/Woordenschat">
+                <Route path="/Woordenschat/">
                   <Vocabulary/>
                 </Route>
                 <Route path="/Conversatie">

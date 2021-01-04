@@ -3,7 +3,7 @@
 .Container{
     display: flex;
     flex-direction: row;
-    background-color:#D74106;
+    background-color: #e5e5e5;
     max-height: 70px;
     opacity: 0.8;
     padding: 5px 10px;
@@ -48,6 +48,7 @@
 .Item{
     cursor: pointer;
     display: inline;
+    text-align: center;
     min-width: 70px;
     background: #fff;
     border-radius: 8px;
