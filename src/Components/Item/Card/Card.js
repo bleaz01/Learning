@@ -1,10 +1,11 @@
 import React,{useState} from 'react';
+import {useParams} from 'react-router-dom';
 
 import './CardStyleSheet.scss'
-const Card = (props) =>{
+const Card = ({cardHeader, imgCard, cardFooter, href}) =>{
 
-    const {cardHeader, imgCard, cardFooter, href} = props
-
+    
+   
     return (
         <div  className='Card-container'>
             <div className='Card-header'>

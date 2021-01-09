@@ -2,7 +2,10 @@ import React from 'react';
 
 import './CardVocItemStyleSheet.scss'
 
+
 const CardVocItem = ({img, title})=>{
+
+
     return( 
         
         <div className="VocItem-container">

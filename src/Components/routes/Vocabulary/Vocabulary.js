@@ -2,68 +2,47 @@
 
 import React,{useEffect,useState} from 'react';
 import useAxios from 'axios-hooks'
-import { useParams } from "react-router-dom";
+import {  BrowserRouter as Router,
+    useLocation,
+    useRouteMatch,
+    } from "react-router-dom";
+
 import img from './assets/ski.png'
 
-
 //component
-import Card from '../../Item/Card/Card';
+import Card from '../../Item/Card/Card'
+import GetItem from '../../layout/GetItem'
 
+//style
 import './VocabularyStyleSheet.scss'
-import CardVocItem from '../../Item/CardItem/CardVocItem/CardVocItem'
 
 
 const Vocabulary = ()=>{
 
-    const [getVocabulary, setGetVocabulary] = useState('')
-    const [getName, setGetName] = useState('')
+    const [{ data, loading, error }, refetch] = useAxios(
+        'http://localhost:3000/api/vocabulary/getName'
+        )
 
-    // const [{ data, loading, error }, refetch] = useAxios(
-    //     'http://localhost:3000/api/vocabulary/getName'
-    //     )
-    // // let {url} = useParams()
+    let {path,url} = useRouteMatch()
+    let name = useLocation()
+    let slug = name.pathname.split("/")[2]
 
-    let url = 'activity'
-
-    
-   
-        const [{ data }] = useAxios(
-            `http://localhost:3000/api/vocabulary/${url}`
-            )
-
-   
-      
     return (
         <div className='Voc-container'>
             <div className='Voc-header'>
-            {/* {data && Object.keys(data).map((activity)=>{
-                return (
-                    <Card
-                        cardHeader={activity}
-                        imgCard={img}
-                        cardFooter='check'
-                        href={'/'+activity}
-                    />
-               )
-            })} */}
+                {data && Object.keys(data).map((activity)=>{
+                    return ( 
+                        <Card
+                            cardHeader={activity}
+                            imgCard={img}
+                            cardFooter='check'
+                            href={`${url}/${activity}`}  
+                        />       
+                    )
+                })}    
             </div>
             <div className='Voc-body'>
-               {data && data.map((l)=>{
-                    console.log(l.img)
-                    return(
-                        <CardVocItem
-                        img={img}
-                        title={l.title}
-                        />
-                    )
-                   
-                })
-               
-               }
-                
-                {/* <a onClick={x()} style={{border: '2px' , borderStyle:'solid', margin:'10px', marginTop:'5px'}}>
-                    bouton
-                </a> */}
+                <GetItem name={slug} />
             </div>
         </div>
     )

@@ -36,7 +36,7 @@ function App() {
                 <Route path="/Verbum">
                   <Verbs/>
                 </Route>
-                <Route path="/Woordenschat/">
+                <Route path="/Woordenschat">
                   <Vocabulary/>
                 </Route>
                 <Route path="/Conversatie">
