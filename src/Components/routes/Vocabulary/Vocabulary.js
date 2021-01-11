@@ -7,7 +7,7 @@ import {  BrowserRouter as Router,
     useRouteMatch,
     } from "react-router-dom";
 
-import img from './assets/ski.png'
+import img from '../../../assets/houseTheme.jpg'
 
 //component
 import Card from '../../Item/Card/Card'

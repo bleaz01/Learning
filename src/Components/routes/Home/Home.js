@@ -1,12 +1,24 @@
 import React from 'react'
+import SelectModal from '../../Modals/SelectModal/SelectModal'
 
 
 
 const Home=()=>{
-
+const data=[
+    {title:"lundi"},
+    {title:"mardi"},
+    {title:"mercredi"},
+    {title:"jeudi"},
+    {title:"vendredi"},
+    {title:"samedi"},
+]
     return(
-        
-        <h1>lol</h1>
+       <div>
+          <SelectModal
+            item={data}
+          />
+       </div> 
+       
     )
 }
 
