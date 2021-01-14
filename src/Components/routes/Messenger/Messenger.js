@@ -16,10 +16,10 @@ const Messenger = () =>{
     return(
             <div className="Msg-container">
                 <div className="Msg-header">
-                    k
+                    title
                 </div>
                 <div className="Msg-content">
-                    k
+                    threads
                 </div>
                 <div className="Msg-footer">
                     <div className="Msg-form">
