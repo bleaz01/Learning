@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../Item/Button/Button';
 import ModalBase from '../Modal/ModalBase';
 
 import './SelectModalStyleSheet.scss'
@@ -10,7 +11,9 @@ const SelectModal = ({item})=>{
                 {item.map((l)=>{
                     return(
                         <>
-                        <button>{l.title}</button>
+                      <Button buttonSize={"large"} onclick={()=>{console.log('hh')}}>
+                          {l.title}
+                      </Button>
                         </>
                     )
                 })}
