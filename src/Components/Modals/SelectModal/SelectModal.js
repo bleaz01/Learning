@@ -3,6 +3,7 @@ import useAxios from 'axios-hooks'
 import {  BrowserRouter as Router,
     useLocation,
     useRouteMatch,
+    useHistory
     } from "react-router-dom";
 
 
@@ -24,7 +25,11 @@ const SelectModal = ()=>{
     )
     const [modalIsOpen,setIsOpen] = useState(false);
     const [myActivity, setMyActivity] = useState();
-    const [currentUrl,setCurentUrl] = useState('')
+    const [currentUrl,setCurentUrl] = useState('');
+
+    const history = useHistory();
+
+    let {path,url} = useRouteMatch()
 
 
     const openModal = () =>{
@@ -37,12 +42,12 @@ const SelectModal = ()=>{
     }
 
     const selectMyactivity =(item)=>{
-
+        
         setMyActivity(item)
         setIsOpen(false);
+        history.push(`${url}/${item}`);
        
     }
-    let {path,url} = useRouteMatch()
   
     return(
         <>
@@ -53,8 +58,6 @@ const SelectModal = ()=>{
             cardHeader={myActivity}
             imgCard={img}
             cardFooter='check'
-            href={`${url}/${myActivity}`}  
-            
             />      
             :
             <Button buttonSize={"large"} onclick={openModal}>select</Button>
