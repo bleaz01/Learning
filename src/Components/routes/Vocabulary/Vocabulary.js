@@ -15,22 +15,27 @@ import GetItem from '../../layout/GetItem'
 
 //style
 import './VocabularyStyleSheet.scss'
+import SelectModal from '../../Modals/SelectModal/SelectModal';
 
 
 const Vocabulary = ()=>{
 
     const [{ data, loading, error }, refetch] = useAxios(
         'http://localhost:3000/api/vocabulary/getName'
-        )
+    )
 
     let {path,url} = useRouteMatch()
     let name = useLocation()
     let slug = name.pathname.split("/")[2]
 
+
     return (
         <div className='Voc-container'>
             <div className='Voc-header'>
-                {data && Object.keys(data).map((activity)=>{
+                <SelectModal/>
+                {/* {data && Object.keys(data).map((activity)=>{
+                        
+
                     return ( 
                         <Card
                             cardHeader={activity}
@@ -39,7 +44,7 @@ const Vocabulary = ()=>{
                             href={`${url}/${activity}`}  
                         />       
                     )
-                })}    
+                })}     */}
             </div>
             <div className='Voc-body'>
                 <GetItem name={slug} />
