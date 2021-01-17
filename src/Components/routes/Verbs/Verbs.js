@@ -1,19 +1,27 @@
 import React from 'react';
-import FormBase from '../../Forms/FormBase/FormBase';
-import SearchForm from '../../Forms/SeachForms/SearchForm';
-import CardVerbs from '../../Item/CardItem/CardVerbs/CardVerbs';
-import useAxios from 'axios-hooks'
+import useAxios from 'axios-hooks';
+import { useRouteMatch,useHistory, useLocation } from "react-router-dom";
 
 
+//Style
 import './VerbsStyleSheet.scss'
 
+//Components
+import SearchForm from '../../Forms/SeachForms/SearchForm';
+import CardVerbs from '../../Item/CardItem/CardVerbs/CardVerbs';
+import GetItemVerbs from '../../layout/GetItemVerb';
 
 
- 
-const verb = 'Eten'
-const verbTranslet = 'Manger'
 
-const Verbs = ()=>{
+const Verbs = () =>{
+
+    let name = useLocation();
+    let slug = name.pathname.split("/")[2]
+
+    console.log(slug)
+
+    const verb = slug
+    const verbTranslet = 'Manger'
 
     const [{ data, loading, error }, refetch] = useAxios(
         'http://localhost:3000/api/verbs/getNameVerbs'
@@ -32,7 +40,9 @@ const Verbs = ()=>{
                     <h4>Conjugatie van het werkwoord "{verb}" = "{verbTranslet}"</h4>
                 </div>
                 <div className='Verb-content'>
-                        <CardVerbs/>
+                       <GetItemVerbs
+                       name={slug}
+                       />
                 </div>
             </div>
            

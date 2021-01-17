@@ -1,7 +1,7 @@
 import Reat,{useState,useEffect} from 'react';
 import { useForm } from "react-hook-form";
 import FormBase from '../FormBase/FormBase';
-
+import { useRouteMatch,useHistory } from "react-router-dom";
 
 
 
@@ -16,8 +16,15 @@ const SearchForm = ({dataSearch})=>{
         setSearchTerm(event.target.value);
     };
 
+    const history = useHistory();
+    let {path,url} = useRouteMatch()
+
     
-    const onSubmit = data =>  setSearchTerm(data);
+    const onSubmit = data =>  {
+        setSearchTerm(data);
+        history.push(`${url}/${searchResults[0]}`);
+    }
+
 
     useEffect(() => {
 
@@ -26,7 +33,6 @@ const SearchForm = ({dataSearch})=>{
                 item.toLowerCase().includes(searchTerm)
               );
               setSearchResults(results);
-
         }
        
       }, [searchTerm]);
@@ -44,7 +50,7 @@ const SearchForm = ({dataSearch})=>{
                 onchange={handledChange}
 
             />
-           <span>ji</span>
+           
          </div> 
     )
 }
