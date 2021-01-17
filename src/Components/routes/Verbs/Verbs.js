@@ -1,27 +1,32 @@
 import React from 'react';
 import FormBase from '../../Forms/FormBase/FormBase';
+import SearchForm from '../../Forms/SeachForms/SearchForm';
 import CardVerbs from '../../Item/CardItem/CardVerbs/CardVerbs';
+import useAxios from 'axios-hooks'
+
 
 import './VerbsStyleSheet.scss'
 
-const onSubmit = data => console.log(data);
 
+
+ 
 const verb = 'Eten'
 const verbTranslet = 'Manger'
 
 const Verbs = ()=>{
+
+    const [{ data, loading, error }, refetch] = useAxios(
+        'http://localhost:3000/api/verbs/getNameVerbs'
+    )
     return (
         <div className='Verb-container'>
-            <div className='Verb-header'>
-                <div className="Verb-forms">
-                    <FormBase
-                        onSubmit={onSubmit}
-                        name={'SearchVerb'}
-                        StyleForm='Forms'
-                        placeholder='Eten'
+           {data &&  <div className='Verb-header'>
+                <div className="Verb-forms">     
+                    <SearchForm
+                    dataSearch={data}
                     />
                 </div>
-            </div>
+            </div>}
             <div className='Verb-body'>
                 <div className='Verb-banner'>
                     <h4>Conjugatie van het werkwoord "{verb}" = "{verbTranslet}"</h4>
