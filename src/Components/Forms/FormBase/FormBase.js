@@ -7,7 +7,8 @@ const FormBase = ( {
     StyleForm, 
     name , 
     defaultValue,
-    placeholder
+    placeholder,
+    onchange
 
 }) =>{
 
@@ -25,9 +26,11 @@ const FormBase = ( {
                 <input 
                     className={'FormBase-input'}
                     placeholder={placeholder}
-                    name={'tes'&& name} 
+                    name={'test'&& name} 
                     defaultValue={defaultValue && 'test'} 
+                    onChange={onchange}
                     ref={register} />
+                    
             </form>  
         </div>
     )

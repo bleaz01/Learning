@@ -60,9 +60,7 @@ const SelectModal = ()=>{
             cardFooter='check'
             />      
             :
-            <Button buttonSize={"large"} onclick={openModal}>select</Button>
-
-            
+            <Button buttonSize={"large"} onclick={openModal}>select</Button> 
         }
         
         <ModalBase closeModal={closeModal} modalIsOpen={modalIsOpen}>
