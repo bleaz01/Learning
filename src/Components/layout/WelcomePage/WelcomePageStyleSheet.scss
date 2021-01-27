@@ -1,0 +1,45 @@
+
+
+.WelcomePage-Container{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // background-color: aqua;
+
+    .WelcomePage-Main{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .section{
+        width: 100%;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+    .img{
+        width: 30%;
+    }
+}
+
+.one{
+    background-color: aqua;
+}
+
+.two{
+
+    background-color:hotpink;
+
+}
+
+.three{
+    background-color:rebeccapurple;
+
+}
+.four{
+    background-color:rgb(54, 92, 59);
+
+}
+

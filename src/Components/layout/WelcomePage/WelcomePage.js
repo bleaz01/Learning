@@ -1,0 +1,99 @@
+import React, { useState } from "react"
+import LoginForm from "../../Forms/LoginForm/LoginForm"
+import RegisterForm from "../../Forms/RegisterForm/RegisterForm"
+import Button from "../../Item/Button/Button"
+import ModalBase from "../../Modals/Modal/ModalBase"
+import img from "../../../assets/Dialogue.png";
+
+import "./WelcomePageStyleSheet.scss"
+
+
+
+
+                            // Add after Welcome design down \\
+
+//      <Button buttonSize={"small"} onclick={openRegisterModal}> Register </Button>  \\
+//      <Button buttonSize={"small"} onclick={openLoginModal}> Login</Button>         \\
+
+                            //           ---------             \\
+
+
+const WelcomePage =()=>{
+
+    const [modalRegisterIsOpen,setRegisterIsOpen] = useState(false);
+    const [modalLoginIsOpen,setLoginIsOpen] = useState(false);
+
+
+    const openRegisterModal = () =>{
+        setRegisterIsOpen(true);
+        
+    }
+    const openLoginModal =()=>{
+        setLoginIsOpen(true)
+
+    }
+
+    const closeRegisterModal = () =>{
+        setRegisterIsOpen(false);
+    }
+
+    const closeLoginModal =()=>{
+        setLoginIsOpen(false)
+    }
+
+   const section=[
+       'one',
+       'two',
+       'three',
+       'four'
+
+
+   ]
+
+    return(
+     
+        <div className="WelcomePage-Container">
+
+            <div className="WelcomePage-Main">
+                <div className={`section ${section[0]}`}>
+                        1
+                </div>
+                <div className={`section ${section[1]}`}>
+                    <div>
+                        
+                    </div>
+                    <div>
+                        <img className="img" src={img}  alt={img} />
+                    </div>
+                </div>
+                <div className={`section ${section[2]}`}>
+                        3
+                </div>
+                <div className={`section ${section[3]}`}>
+                        4
+                </div>
+                
+            </div>
+
+            
+        
+
+
+
+                              {/* <-----Modal-Screen------> */}
+
+
+            <ModalBase closeModal={closeLoginModal} modalIsOpen={modalLoginIsOpen}>
+                <LoginForm/>
+            </ModalBase>
+            
+            <ModalBase closeModal={closeRegisterModal} modalIsOpen={modalRegisterIsOpen}>
+                <RegisterForm/>
+            </ModalBase>
+        </div>
+      
+    )
+
+}
+
+export default WelcomePage

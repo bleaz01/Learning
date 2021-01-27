@@ -2,7 +2,7 @@ import React, { Suspense, lazy ,useState} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './App.scss';
-import LoggoudScreen from './Components/layout/LoggoudScreen/LoggoudScreen';
+import WelcomePage from './Components/layout/WelcomePage/WelcomePage';
 import NavBar from './Components/NavBar/NavBar';
 
 //Routes
@@ -64,7 +64,7 @@ function App() {
       </Router>
       </>
      :
-     <LoggoudScreen/>
+     <WelcomePage/>
     }  
     </div>
      
