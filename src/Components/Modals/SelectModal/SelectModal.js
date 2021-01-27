@@ -77,7 +77,7 @@ const SelectModal = ()=>{
                     )
                 })}    
           </div>
-      </ModalBase>
+        </ModalBase>
       </>
     )
 }

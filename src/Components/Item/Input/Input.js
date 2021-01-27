@@ -1,12 +1,26 @@
 import { TextField } from "@material-ui/core";
 import React from "react";
 
-import Style from './InputStyleSheet.scss';
+import  './InputStyleSheet.scss';
 
-const Input = ( name, ref, defaultValue) =>{
+const Input = ( {
+    name, 
+    inputRef, 
+    defaultValue,
+    placeholder,
+    onchange
+    
+    }) =>{
 
     return (
-        <input name={name} defaultValue={defaultValue} ref={ref} />
+        <input 
+            className={'FormBase-input'}
+            placeholder={placeholder}
+            name={name} 
+            defaultValue={defaultValue} 
+            onChange={onchange}
+            ref={inputRef}
+         />
 
     )
 

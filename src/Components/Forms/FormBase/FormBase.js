@@ -29,7 +29,8 @@ const FormBase = ( {
                     name={'test'&& name} 
                     defaultValue={defaultValue && 'test'} 
                     onChange={onchange}
-                    ref={register} />
+                    // ref={register} 
+                    />
                     
             </form>  
         </div>

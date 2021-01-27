@@ -1,31 +1,33 @@
-import React from 'react'
+import React,{useState} from 'react'
 
-
+//Style
 import './CardVerbsStyleSheet.scss';
 
-const CardVerbs = ({items}) =>{
 
-    
+const CardVerbs = ({items,title}) =>{
+
+    const [cardTitle, setCardtitle] = useState('')
+
+    const sub = ['ik',' jij/u/je,','hij/zij/het',' wij (we)',' julli',' zij (ze)']
+
+    const changeTitleTime =(index)=>{
+
+        switch(index){
+            case 'ott':
+                setCardtitle("onvoltooid tegenwoordige tijd (ott)")
+            break;
+            case'vtt':
+                setCardtitle( "voltooid tegenwoordige tijd (vtt)")
+            break
+        }
+    }
+    let i = 0
    
-    
-    const sub = [
-        {subject:'ik'},
-        {subject: ' jij/u'},
-        {subject:'je,'},
-        {subject:'hij/zij/het'},
-        {subject:' wij (we)'},
-        {subject:' julli'},
-        {subject:' zij (ze)'},
-    ]
-
-  
-
-    const data = items.map((item =>{
-
+    const data = items.map((item) =>{
         return(
             <div className='CardVerbs-list'>  
                 <div className='sub'>
-                
+                    {sub[i++]}
                 </div> 
                 <div className='verb'>
                     {item}
@@ -33,18 +35,18 @@ const CardVerbs = ({items}) =>{
             </div>
             
         )
-   
-    }))
-    
+        
+    })
+
 
     return(
         <div className='CardVerbs-container'>
             <div className='CardVerbs-header'>
-                <h5> voltooid tegenwoordige tijd (vtt)</h5>
+                <h5> </h5>
             </div>
            
             <div className='CardVerbs-content'>
-                     {data} 
+                    {data}
             </div>
         </div>
     )

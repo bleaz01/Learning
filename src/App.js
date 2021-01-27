@@ -1,7 +1,8 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy ,useState} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './App.scss';
+import LoggoudScreen from './Components/layout/LoggoudScreen/LoggoudScreen';
 import NavBar from './Components/NavBar/NavBar';
 
 //Routes
@@ -14,9 +15,16 @@ const Messenger = lazy(() => import('./Components/routes/Messenger/Messenger'));
 
 
 function App() {
+
+  const [logged, setLogged] = useState(false)
   return (
+
     <div className="App">
+      {
+      logged ? 
+      <>
       <Router>
+      
         <header className="App-header">
           <NavBar/>
         </header>
@@ -25,6 +33,7 @@ function App() {
               sidebar
           </div>
           <div className="App-container">
+            
             <Suspense fallback={<div>Chargement...</div>}>
               <Switch>
                 <Route exact path={"/home"}>
@@ -43,14 +52,22 @@ function App() {
                  <Messenger/>
                 </Route>
               </Switch>
-            </Suspense>   
+            </Suspense> 
+          
           </div>
+         
         </div>
+        
         <footer className="App-footer">
           footer
         </footer>
       </Router>
+      </>
+     :
+     <LoggoudScreen/>
+    }  
     </div>
+     
   );
 }
 

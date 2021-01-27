@@ -1,11 +1,12 @@
 /* .App {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
 }
  */
  .App{
+  
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -39,6 +40,7 @@
 .App-footer{
   background-color: blue;
   flex-basis: 100%;
+  
 }
 
 
