@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import LoginForm from "../../Forms/LoginForm/LoginForm"
 import RegisterForm from "../../Forms/RegisterForm/RegisterForm"
 import Button from "../../Item/Button/Button"
 import ModalBase from "../../Modals/Modal/ModalBase"
@@ -7,27 +8,49 @@ import "./LoggoudScreenStyleSheet.scss"
 
 const LoggoudScreen =()=>{
 
-    const [modalIsOpen,setIsOpen] = useState(false);
+    const [modalRegisterIsOpen,setRegisterIsOpen] = useState(false);
+    const [modalLoginIsOpen,setLoginIsOpen] = useState(false);
 
-    const openModal = () =>{
-        setIsOpen(true);
+
+    const openRegisterModal = () =>{
+        setRegisterIsOpen(true);
         
     }
+    const openLoginModal =()=>{
+        setLoginIsOpen(true)
 
-    const closeModal = () =>{
-        setIsOpen(false);
     }
+
+    const closeRegisterModal = () =>{
+        setRegisterIsOpen(false);
+    }
+
+    const closeLoginModal =()=>{
+        setLoginIsOpen(false)
+    }
+
+   
 
     return(
      
         <div className="LoggoudScreen-Container">
 
             
-            <Button buttonSize={"large"} onclick={openModal}> Register </Button> 
+            <Button buttonSize={"small"} onclick={openRegisterModal}> Register </Button> 
+            <Button buttonSize={"small"} onclick={openLoginModal}> Login</Button> 
 
+
+
+
+
+                              {/* <-----Modal-Screen------> */}
+
+
+            <ModalBase closeModal={closeLoginModal} modalIsOpen={modalLoginIsOpen}>
+                <LoginForm/>
+            </ModalBase>
             
-            <ModalBase closeModal={closeModal} modalIsOpen={modalIsOpen}>
-
+            <ModalBase closeModal={closeRegisterModal} modalIsOpen={modalRegisterIsOpen}>
                 <RegisterForm/>
             </ModalBase>
         </div>

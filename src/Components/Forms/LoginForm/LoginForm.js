@@ -5,18 +5,17 @@ import Input from '../../Item/Input/Input';
 
 
 
-import "./RegisterFormStyleSheet.scss"
+// import "./LoginFormStyleSheet.scss"
 
-const RegisterForm = ()=>{
+const LoginForm = ()=>{
 
     const { register, handleSubmit, watch, errors } = useForm();
 
     const onSubmit = data =>  {
        console.log(data)     
     }
-
+    
     return(
-        
         <div className='RegisterForm-Container'>
             <div className='RegisterForm-Title'>
                 Logo
@@ -37,11 +36,7 @@ const RegisterForm = ()=>{
                     // defaultValue={defaultValue && 'test'} 
                     inputRef={register} 
                 />
-                 <select className='FormBase-input' name="role" ref={register}>
-                    <option value="student">Student</option>
-                    <option value="teacher">Teacher</option>
-                 </select>
-                 <Button buttonSize={"small"} onclick={onSubmit}>Register</Button> 
+                 <Button buttonSize={"small"} onclick={onSubmit}>Login</Button> 
 
             </form>  
 
@@ -50,4 +45,4 @@ const RegisterForm = ()=>{
     )
 }
 
-export default RegisterForm
+export default LoginForm
