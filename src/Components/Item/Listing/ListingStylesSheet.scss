@@ -1,0 +1,35 @@
+.ListItems-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 250px;
+    // padding: 10px,5;
+    .ListItems-Main{
+
+    }
+    .ListItems-Body{
+
+    }
+    .ListItems-footer{
+
+    }
+}
+
+//--------------------//
+
+.Listing-Container{
+    display: flex;
+    flex-direction: column;
+   
+
+    .Listing-Main{
+
+    }
+    .Listing-Body{
+
+    }
+    .Listing-Footer{
+
+    }
+
+}
