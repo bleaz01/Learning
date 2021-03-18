@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import useAxios from 'axios-hooks'
 
-import { signIn, signOut, useSession } from 'next-auth/client'
 
 import LoginForm from "../../Forms/LoginForm/LoginForm"
 import RegisterForm from "../../Forms/RegisterForm/RegisterForm"
@@ -12,7 +11,7 @@ import img from "../../../assets/Dialogue.png";
 import "./WelcomePageStyleSheet.scss"
 import GoogleBtn from "../GoogleBtn"
 import Listing from "../../Item/Listing/Listing"
-import Login from "../../routes/Login/Login"
+// import Login from "../../routes/Login/Login"
 
 
 
@@ -31,9 +30,9 @@ const WelcomePage =()=>{
     const [modalLoginIsOpen,setLoginIsOpen] = useState(false);
 
     
-    const [session] = useSession()
+    // const [session] = useSession()
 
-    console.log(session)
+    // console.log(session)
 
 
     const openRegisterModal = () =>{
@@ -68,20 +67,20 @@ const WelcomePage =()=>{
 
             <div className="WelcomePage-Main">
                 <div className={`section ${section[0]}`}>
-                    <GoogleBtn/>
+                    {/* <GoogleBtn/> */}
 
                 </div>
                 <div className={`section ${section[1]}`}>
                     <div>
-                        <LoginForm/>
-                     {/* //   <Login/> */}
+                        <RegisterForm/>
+                        {/* <LoginForm/> */}
                     </div>
                     <div>
                         <img className="img" src={img}  alt={img} />
                     </div>
                 </div>
                 <div className={`section ${section[2]}`}>
-                        <Listing/>
+                        {/* <Listing/> */}
                 </div>
                 <div className={`section ${section[3]}`}>
                         4

@@ -18,11 +18,11 @@ const Messenger = lazy(() => import('./Components/routes/Messenger/Messenger'));
 function App() {
 
 
-const [{ data, loading, error }, refetch] = useAxios(
-  'http://localhost:3000/api/auth/session'
-)
+// const [{ data, loading, error }, refetch] = useAxios(
+//   'http://localhost:3000/api/auth/session'
+// )
 
-console.log(data, '====')
+// console.log(data, '====')
 
   const [logged, setLogged] = useState(false)
   return (

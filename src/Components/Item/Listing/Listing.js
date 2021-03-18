@@ -5,13 +5,13 @@ import { useQuery, gql } from '@apollo/client';
 //style
 import './ListingStylesSheet.scss'
 
-const LISTEN_USER = gql`
-  query user {
-    name
-    image
-    id
-  }
-`;
+// const LISTEN_USER = gql`
+//   query user {
+//     name
+//     image
+//     id
+//   }
+// `;
 
 
 
@@ -44,25 +44,26 @@ const ListItems = () =>{
 
 const Listing = () =>{
 
-    const { loading, error, data } = useQuery(LISTEN_USER);
+    // const { loading, error, data } = useQuery(LISTEN_USER);
 
-    console.log(data)
+    // console.log(data)
 
     return(
-        <div className='Listing-Container'> 
-            <div className='Listing-Main'> 
+        <div></div>
+        // <div className='Listing-Container'> 
+        //     <div className='Listing-Main'> 
             
-                    Amis
-            </div>
-            {data && <div className='Listing-Body'> 
-                {/* {data.map()} */}
-                <ListItems/>
-            </div>}
-            <div className='Listing-Footer'> 
-               Footer
-            </div>
+        //             Amis
+        //     </div>
+        //     {/* {data && <div className='Listing-Body'>  */}
+        //         {/* {data.map()} */}
+        //         {/* <ListItems/> */}
+        //     </div>
+        //     <div className='Listing-Footer'> 
+        //        Footer
+        //     </div>
 
-        </div>
+        // </div>
     )
 
     
