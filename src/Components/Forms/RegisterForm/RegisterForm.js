@@ -2,7 +2,7 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import Button from '../../Item/Button/Button';
 import Input from '../../Item/Input/Input';
-
+import useAuthentication from "../../../lib/hooks/useAuthent"
 
 
 import "./RegisterFormStyleSheet.scss"
@@ -10,9 +10,15 @@ import "./RegisterFormStyleSheet.scss"
 const RegisterForm = ()=>{
 
     const { register, handleSubmit, watch, errors } = useForm();
+    const {handleUserRegistration} = useAuthentication()
 
     const onSubmit = data =>  {
-       console.log(data)     
+
+        const use = data
+       
+        handleUserRegistration(use).then(()=>{
+            console.log("successsfuly")
+        })
     }
 
     return(
@@ -26,21 +32,21 @@ const RegisterForm = ()=>{
             </div>
            <form className='RegisterForm-Form' onSubmit={handleSubmit(onSubmit)}>
                 <Input
-                    placeholder="name"
-                    name="name" 
-                    // defaultValue={defaultValue && 'test'} 
-                    inputRef={register} 
-                    />
-                <Input 
                     placeholder="email"
                     name="email" 
                     // defaultValue={defaultValue && 'test'} 
                     inputRef={register} 
+                    />
+                <Input 
+                    placeholder="password"
+                    name="password" 
+                    // defaultValue={defaultValue && 'test'} 
+                    inputRef={register} 
                 />
-                 <select className='FormBase-input' name="role" ref={register}>
+                 {/* <select className='FormBase-input' name="role" ref={register}>
                     <option value="student">Student</option>
                     <option value="teacher">Teacher</option>
-                 </select>
+                 </select> */}
                  <Button buttonSize={"small"} onclick={onSubmit}>Register</Button> 
 
             </form>  

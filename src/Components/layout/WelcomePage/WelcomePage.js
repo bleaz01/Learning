@@ -72,8 +72,8 @@ const WelcomePage =()=>{
                 </div>
                 <div className={`section ${section[1]}`}>
                     <div>
-                        <RegisterForm/>
-                        {/* <LoginForm/> */}
+                        {/* <RegisterForm/> */}
+                        <LoginForm/>
                     </div>
                     <div>
                         <img className="img" src={img}  alt={img} />

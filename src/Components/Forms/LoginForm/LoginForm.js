@@ -2,6 +2,7 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import Button from '../../Item/Button/Button';
 import Input from '../../Item/Input/Input';
+import useAuthentication from "../../../lib/hooks/useAuthent"
 
 
 
@@ -10,8 +11,17 @@ import Input from '../../Item/Input/Input';
 const LoginForm = ()=>{
 
     const { register, handleSubmit, watch, errors } = useForm();
+    const {handleUserLogin} = useAuthentication()
 
-    const onSubmit = data =>  {
+    const onSubmit = (data) =>  {
+        
+        if(data.email){
+
+            const userEmail = data.email
+            const userPassword = data.password
+            handleUserLogin(userEmail, userPassword).then(currentUser => console.log(currentUser))
+
+        }
        console.log(data)     
     }
     
@@ -25,14 +35,14 @@ const LoginForm = ()=>{
             </div>
            <form className='RegisterForm-Form' onSubmit={handleSubmit(onSubmit)}>
                 <Input
-                    placeholder="name"
-                    name="name" 
+                    placeholder="email"
+                    name="email" 
                     // defaultValue={defaultValue && 'test'} 
                     inputRef={register} 
                     />
                 <Input 
-                    placeholder="email"
-                    name="email" 
+                    placeholder="password"
+                    name="password" 
                     // defaultValue={defaultValue && 'test'} 
                     inputRef={register} 
                 />
