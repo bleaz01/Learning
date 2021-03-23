@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 import useAxios from 'axios-hooks'
+import {useDispatch, useSelector} from "react-redux"
+
 
 
 import LoginForm from "../../Forms/LoginForm/LoginForm"
@@ -28,8 +30,9 @@ const WelcomePage =()=>{
 
     const [modalRegisterIsOpen,setRegisterIsOpen] = useState(false);
     const [modalLoginIsOpen,setLoginIsOpen] = useState(false);
+    // const user = useSelector((state) => state.user)
 
-    
+    // console.log(user,'myuser')
     // const [session] = useSession()
 
     // console.log(session)

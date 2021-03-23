@@ -1,5 +1,7 @@
 import React from 'react'
 import { useForm } from "react-hook-form";
+import {useDispatch} from 'react-redux';
+
 import Button from '../../Item/Button/Button';
 import Input from '../../Item/Input/Input';
 import useAuthentication from "../../../lib/hooks/useAuthent"
@@ -8,9 +10,11 @@ import useAuthentication from "../../../lib/hooks/useAuthent"
 import "./RegisterFormStyleSheet.scss"
 
 const RegisterForm = ()=>{
+    const dispatch = useDispatch()
+
 
     const { register, handleSubmit, watch, errors } = useForm();
-    const {handleUserRegistration} = useAuthentication()
+    const {handleUserRegistration} = useAuthentication(dispatch)
 
     const onSubmit = data =>  {
 

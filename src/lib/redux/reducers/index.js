@@ -1,20 +1,39 @@
 
-import {createStore} from "redux";
+import { combineReducers, createStore } from "redux";
+import user from "./user";
 
-function reducer(state = {items:[]}, action){
+function reducer(state ={items: [] }, action){
     switch(action.type){
-        case "USER_LOGIN":
-            return state
-        default:
-            return  state
+        case "LOGIN":
+        if(state.user) {return state}
+        return{
+            user:action.payload.user,
+            error:action.payload.error,
+        }
+        case "LOGOUT": 
+            return {user:null, error:null}
+        
+        default: 
+            return state;
     }
 }
 
-export function userLogin(item){
+export const handleLogin = user =>{
+    console.log(user,"redux")
     return{
-        type:"USER_LOGIN",
-        payload: item
-    };
+        type:"LOGIN",
+        payload:{user:user, error:null}
+    }
+}
+export const handleLogout=()=>{
+    return{
+        type:"LOGOUT",
+    }
 }
 
-export const store = createStore(reducer)
+
+export const store = createStore(
+    reducer,
+
+)
+// export default reducers

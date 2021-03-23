@@ -3,6 +3,7 @@ import {Provider} from "react-redux"
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+// import configStore from './lib/redux/store'
 import {store} from './lib/redux/reducers'
 import reportWebVitals from './reportWebVitals';
 import { ApolloClient,ApolloProvider, InMemoryCache } from '@apollo/client';
@@ -12,6 +13,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 })
 
+// const store = configStore()
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>

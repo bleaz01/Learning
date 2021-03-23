@@ -1,4 +1,5 @@
 import React from 'react'
+import {useDispatch} from 'react-redux';
 import { useForm } from "react-hook-form";
 import Button from '../../Item/Button/Button';
 import Input from '../../Item/Input/Input';
@@ -10,8 +11,9 @@ import useAuthentication from "../../../lib/hooks/useAuthent"
 
 const LoginForm = ()=>{
 
+    const dispatch = useDispatch()
     const { register, handleSubmit, watch, errors } = useForm();
-    const {handleUserLogin} = useAuthentication()
+    const {handleUserLogin} = useAuthentication(dispatch)
 
     const onSubmit = (data) =>  {
         
