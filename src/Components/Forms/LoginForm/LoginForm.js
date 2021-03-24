@@ -4,7 +4,8 @@ import { useForm } from "react-hook-form";
 import Button from '../../Item/Button/Button';
 import Input from '../../Item/Input/Input';
 import useAuthentication from "../../../lib/hooks/useAuthent"
-
+// import {useMutation} from '@apollo/client'
+// import { ADD_USER } from '../../../lib/apollo/mutation'
 
 
 // import "./LoginFormStyleSheet.scss"
@@ -13,6 +14,8 @@ const LoginForm = ()=>{
 
     const dispatch = useDispatch()
     const { register, handleSubmit, watch, errors } = useForm();
+    // const [addUser, { data }] = useMutation(ADD_USER);
+
     const {handleUserLogin} = useAuthentication(dispatch)
 
     const onSubmit = (data) =>  {
@@ -21,6 +24,7 @@ const LoginForm = ()=>{
 
             const userEmail = data.email
             const userPassword = data.password
+            // addUser({ variables: { email: data.eamil, password:data.password } });
             handleUserLogin(userEmail, userPassword).then(currentUser => console.log(currentUser))
 
         }

@@ -9,7 +9,7 @@ import ndl from '../../assets/ndl.jpg';
 import login from '../../assets/jeason.jpg';
 import SearchForm from '../Forms/SeachForms/SearchForm';
 import Button from '../Item/Button/Button';
-import { handleLogout } from '../../lib/redux/reducers';
+import { handleLogout } from '../../lib/redux/actions/authentication';
 
 
 const NavBar = ({user})=>{

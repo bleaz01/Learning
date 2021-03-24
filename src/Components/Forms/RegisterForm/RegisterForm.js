@@ -5,6 +5,8 @@ import {useDispatch} from 'react-redux';
 import Button from '../../Item/Button/Button';
 import Input from '../../Item/Input/Input';
 import useAuthentication from "../../../lib/hooks/useAuthent"
+import {useMutation} from '@apollo/client'
+import { ADD_USER } from '../../../lib/apollo/mutation'
 
 
 import "./RegisterFormStyleSheet.scss"
@@ -15,14 +17,19 @@ const RegisterForm = ()=>{
 
     const { register, handleSubmit, watch, errors } = useForm();
     const {handleUserRegistration} = useAuthentication(dispatch)
+    const [addUser, { data ,error}] = useMutation(ADD_USER);
 
+    console.log(error)
     const onSubmit = data =>  {
 
         const use = data
-       
+
         handleUserRegistration(use).then(()=>{
+            addUser({ variables: { email: data.email, password: data.password } });
+
             console.log("successsfuly")
         })
+
     }
 
     return(

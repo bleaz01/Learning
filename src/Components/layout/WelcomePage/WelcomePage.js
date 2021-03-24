@@ -30,12 +30,6 @@ const WelcomePage =()=>{
 
     const [modalRegisterIsOpen,setRegisterIsOpen] = useState(false);
     const [modalLoginIsOpen,setLoginIsOpen] = useState(false);
-    // const user = useSelector((state) => state.user)
-
-    // console.log(user,'myuser')
-    // const [session] = useSession()
-
-    // console.log(session)
 
 
     const openRegisterModal = () =>{
@@ -75,8 +69,8 @@ const WelcomePage =()=>{
                 </div>
                 <div className={`section ${section[1]}`}>
                     <div>
-                        {/* <RegisterForm/> */}
-                        <LoginForm/>
+                        <RegisterForm/>
+                        {/* <LoginForm/> */}
                     </div>
                     <div>
                         <img className="img" src={img}  alt={img} />

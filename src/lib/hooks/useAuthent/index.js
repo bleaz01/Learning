@@ -1,8 +1,7 @@
 import * as Realm from "realm-web"
 import resolve from "resolve"
 import {app} from "../../Mongo/Mongo-sdk/index"
-// import { handleLogin, handleLogout, handleAuthenticationErrors } from "../../redux/actions/authentication"
-import {handleLogin,handleLogout} from "../../redux/reducers"
+import { handleLogin, handleLogout, handleAuthenticationErrors } from "../../redux/actions/authentication"
 
 const useAuthentication = (dispatch) =>{
 
@@ -19,7 +18,7 @@ const useAuthentication = (dispatch) =>{
                 })
             })
             .catch((error)=>{
-                // dispatch(handleAuthenticationErrors(error))
+                dispatch(handleAuthenticationErrors(error))
                 console.log(error)
             })
        
@@ -40,7 +39,7 @@ const useAuthentication = (dispatch) =>{
             })
         })
         .catch((error)=> {
-            // dispatch(handleAuthenticationErrors(error))
+            dispatch(handleAuthenticationErrors(error))
             console.log(error)
         })
     }
@@ -53,11 +52,13 @@ const useAuthentication = (dispatch) =>{
 
     async function handleAuthentication(){
         const currentUSer = await app.currentUser 
+        dispatch(handleLogin(currentUSer))
     }
     return {
         handleUserRegistration,
         handleUserLogin,
-        handleUserLogout
+        handleUserLogout,
+        handleAuthentication
      }
    
 

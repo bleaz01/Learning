@@ -1,7 +1,9 @@
-import React, { Suspense, lazy ,useState} from 'react';
+import React, { Suspense, lazy ,useState, useEffect} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux"
 import useAxios from 'axios-hooks'
+import useAuthentication from "./lib/hooks/useAuthent"
+
 
 import './App.scss';
 import WelcomePage from './Components/layout/WelcomePage/WelcomePage';
@@ -18,22 +20,21 @@ const Messenger = lazy(() => import('./Components/routes/Messenger/Messenger'));
 
 function App() {
 
+  const dispatch = useDispatch()
+  const { handleAuthentication } = useAuthentication(dispatch)
+
+  useEffect(()=>{
+    handleAuthentication();
+  },[])
+
   const user = useSelector((state) => state.user)
   const [logged, setLogged] = useState(false)
-
-// const [{ data, loading, error }, refetch] = useAxios(
-//   'http://localhost:3000/api/auth/session'
-// )
-
-// console.log(data, '====')
-console.log(user, "les bases")
-  
 
   return (
 
     <div className="App">
       {
-      user ? 
+      user.user? 
       <>
       <Router>
       
