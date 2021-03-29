@@ -39,7 +39,9 @@ const NavBar = ({user})=>{
     return(
         <div className='Container'>
             <div className='Main'> 
-                <img  className='ImgLang' src={user.img}></img>
+               
+                  <a href="/profile">profile</a>
+
                 <div className="Forms">
                     <SearchForm></SearchForm>
                 </div>

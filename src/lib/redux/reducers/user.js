@@ -1,4 +1,5 @@
 import {
+    GET_CURRENT_USER,
     LOGIN,
     LOGOUT
 } from  "../actions/actionTypes"
@@ -18,9 +19,11 @@ const user = (state = initialState, {type, payload})=>{
         }
         case LOGOUT: 
             return {user:null, error:null}
+        case GET_CURRENT_USER:
+            // if(state.user) {return state}
         
         default: 
-            return state;
+            return state
     }
 }
 

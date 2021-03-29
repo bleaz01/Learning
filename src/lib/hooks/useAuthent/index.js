@@ -1,9 +1,14 @@
 import * as Realm from "realm-web"
 import resolve from "resolve"
 import {app} from "../../Mongo/Mongo-sdk/index"
+import {useMutation} from '@apollo/client'
+import { ADD_USER } from '../../../lib/apollo/mutation'
+
+
 import { handleLogin, handleLogout, handleAuthenticationErrors } from "../../redux/actions/authentication"
 
 const useAuthentication = (dispatch) =>{
+    const [addUser, { data }] = useMutation(ADD_USER);
 
     function handleUserRegistration(newUser){     
         return new Promise((resolve =>{
@@ -14,6 +19,7 @@ const useAuthentication = (dispatch) =>{
                 app.logIn(credentials)
                 .then(user =>{
                     dispatch(handleLogin(user))
+                    addUser({ variables: { email: newUser.email, password: newUser.password } });
                     resolve(user)
                 })
             })

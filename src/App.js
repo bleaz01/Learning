@@ -8,6 +8,7 @@ import useAuthentication from "./lib/hooks/useAuthent"
 import './App.scss';
 import WelcomePage from './Components/layout/WelcomePage/WelcomePage';
 import NavBar from './Components/NavBar/NavBar';
+import Profile from './Components/routes/Profile/Profile';
 
 //Routes
 
@@ -28,6 +29,7 @@ function App() {
   },[])
 
   const user = useSelector((state) => state.user)
+  console.log(user.user, "llouise")
   const [logged, setLogged] = useState(false)
 
   return (
@@ -35,6 +37,7 @@ function App() {
     <div className="App">
       {
       user.user? 
+
       <>
       <Router>
       
@@ -63,6 +66,9 @@ function App() {
                 </Route>
                 <Route path="/Conversatie">
                  <Messenger/>
+                </Route>
+                <Route path ="/Profile">
+                  <Profile />
                 </Route>
               </Switch>
             </Suspense> 

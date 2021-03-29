@@ -22,7 +22,7 @@ const SearchForm = ({dataSearch})=>{
     
     const onSubmit = data =>  {
         setSearchTerm(data);
-        history.push(`${url}/${searchResults[0]}`);
+        // history.push(`${url}/${searchResults[0]}`);
     }
 
 

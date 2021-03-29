@@ -17,16 +17,14 @@ const RegisterForm = ()=>{
 
     const { register, handleSubmit, watch, errors } = useForm();
     const {handleUserRegistration} = useAuthentication(dispatch)
-    const [addUser, { data ,error}] = useMutation(ADD_USER);
+    // const [addUser, { data }] = useMutation(ADD_USER);
 
-    console.log(error)
     const onSubmit = data =>  {
 
         const use = data
 
         handleUserRegistration(use).then(()=>{
-            addUser({ variables: { email: data.email, password: data.password } });
-
+            // addUser({ variables: { email: data.email, password: data.password } });
             console.log("successsfuly")
         })
 

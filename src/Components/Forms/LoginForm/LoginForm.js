@@ -1,5 +1,4 @@
 import React from 'react'
-import {useDispatch} from 'react-redux';
 import { useForm } from "react-hook-form";
 import Button from '../../Item/Button/Button';
 import Input from '../../Item/Input/Input';
@@ -10,9 +9,8 @@ import useAuthentication from "../../../lib/hooks/useAuthent"
 
 // import "./LoginFormStyleSheet.scss"
 
-const LoginForm = ()=>{
+const LoginForm = (dispatch)=>{
 
-    const dispatch = useDispatch()
     const { register, handleSubmit, watch, errors } = useForm();
     // const [addUser, { data }] = useMutation(ADD_USER);
 
