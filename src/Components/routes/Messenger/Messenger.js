@@ -1,46 +1,69 @@
 import React, { useEffect } from 'react';
-import TextInput from '../../Item/TextInput/TextInput';
+import {handleUsername, socket} from "../../../lib/socket-io"
+import {useDispatch, useSelector} from "react-redux"
+
+
+// import TextInput from '../../Item/TextInput/TextInput';
 // import { TextField } from "@material-ui/core";
-import {handleUser,createRoom,getNameRoom} from "./index"
+import {
+    handleUser,
+    createRoom,
+    sendMessage,
+    getMessage,
+    showMyMessage
+} from "./index"
 import { useForm } from "react-hook-form";
 
 import './MessengerStyleSheet.scss'
+import FormBase from '../../Forms/FormBase/FormBase';
+
+
+
 
 const Messenger = () =>{
+    let user = useSelector((state) => state.user)
 
-    useEffect(()=>{
-        handleUser()
-       
+    user = user.user._profile.data.email
+    console.log(user)
+   useEffect(()=>{
+       let i = 0
+       handleUsername(user)
+        i++
 
-    })
+   },[4])
+    const { register, handleSubmit, watch, errors } = useForm();
 
+
+    const onSubmit = data => {
+        sendMessage(data.text)
+
+        console.log(data)
+    }
     
-
-    const { control } = useForm();
-
-    const onSubmit = data => console.log(data);
-
-
     return(
             <div className="Msg-container">
                 <div className="Msg-header">
                     title
                 </div>
                 <div className="Msg-content">
-                    threads
-                    <button onClick={() => createRoom('rouez')}>
-                        room
-                    </button>
+                    {/* {handleMessage} */}
+                    {/* {ui.map((name)=>{
+                        console.log(ui,'now')
+                        return <div>
+                                {name}
+                        </div>
+                    })} */}
+                    {/* <button onClick={ ()=> console.log("lkdlk")}>
+                        send
+                    </button> */}
                 </div>
                 <div className="Msg-footer">
                     <div className="Msg-form">
-                        <TextInput 
-                            name="firstName" 
-                            control={control} 
-                            onSubmit={onSubmit}
-                            defaultValue='text'
-                            StyleTextInput='Msg-formC'
-                        />
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <input name="text" defaultValue="..." ref={register} />
+        
+                        <input type="submit" />
+                    </form>
                     </div>
                 </div>
             </div>

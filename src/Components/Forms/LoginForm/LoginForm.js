@@ -2,6 +2,7 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import Button from '../../Item/Button/Button';
 import Input from '../../Item/Input/Input';
+import {useDispatch} from "react-redux"
 import useAuthentication from "../../../lib/hooks/useAuthent"
 // import {useMutation} from '@apollo/client'
 // import { ADD_USER } from '../../../lib/apollo/mutation'
@@ -9,8 +10,8 @@ import useAuthentication from "../../../lib/hooks/useAuthent"
 
 // import "./LoginFormStyleSheet.scss"
 
-const LoginForm = (dispatch)=>{
-
+const LoginForm = ()=>{
+    const dispatch = useDispatch()
     const { register, handleSubmit, watch, errors } = useForm();
     // const [addUser, { data }] = useMutation(ADD_USER);
 

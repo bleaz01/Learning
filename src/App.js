@@ -65,7 +65,7 @@ function App() {
                   <Vocabulary/>
                 </Route>
                 <Route path="/Conversatie">
-                 <Messenger/>
+                 <Messenger />
                 </Route>
                 <Route path ="/Profile">
                   <Profile />

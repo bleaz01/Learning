@@ -1,6 +1,6 @@
 import Reat,{useState,useEffect} from 'react';
 import { useForm } from "react-hook-form";
-import FormBase from '../FormBase/FormBase';
+import FormBase from '../FormBase';
 import { useRouteMatch,useHistory } from "react-router-dom";
 
 
@@ -21,8 +21,9 @@ const SearchForm = ({dataSearch})=>{
 
     
     const onSubmit = data =>  {
+        console.log(data)
         setSearchTerm(data);
-        // history.push(`${url}/${searchResults[0]}`);
+        history.push(`${url}/${searchResults[0]}`);
     }
 
 
@@ -48,6 +49,8 @@ const SearchForm = ({dataSearch})=>{
                 name='Search'
                 placeholder='search'
                 onchange={handledChange}
+                defaultValue=''
+                StyleForm
 
             />
            

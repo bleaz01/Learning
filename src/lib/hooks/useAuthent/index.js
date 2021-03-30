@@ -1,5 +1,5 @@
 import * as Realm from "realm-web"
-import resolve from "resolve"
+// import resolve from "resolve"
 import {app} from "../../Mongo/Mongo-sdk/index"
 import {useMutation} from '@apollo/client'
 import { ADD_USER } from '../../../lib/apollo/mutation'
