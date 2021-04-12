@@ -34,20 +34,25 @@ export const sendMessage=(_text)=> {
 socket.on('acceptUsername', (_username, _allUsers) => {
     username = _username
     allUsers = _allUsers
+
+    console.log(_username,_allUsers, 'accept')
 //    updateUsers(allUsers)
 
 })
 socket.on('rejectUsername', (_username) => {
   
     inputUsername = _username
+
+    console.log(inputUsername,'reject')
     return inputUsername
 })
 
 // Mise à jour des utilisateurs 
-socket.on('newUser', (newUsername, _allUsers) => {
+socket.on('newUser', (newUsername, newSocketId,_allUsers) => {
     allUsers = _allUsers
     // updateUsers(allUsers)
     // messageNewUser(newUsername)
+    console.log(newSocketId,'jil', newUsername)
 })
 socket.on('leftUser', (_allUsers) => {
     allUsers = _allUsers

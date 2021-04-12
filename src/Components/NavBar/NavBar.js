@@ -23,35 +23,39 @@ const NavBar = ({user})=>{
         'Conversatie',
         'Woordenschat',
         'Verbum',
-        'Structure'
+        'Structure',
+        'verbroken'
+        
     ])
 
+
     const items = listItems.map((item)=>{
+        let tag = null
+        // if(item =="verbroken") tag = dispatch(handleLogout())
         return (
             
-                <li className='Item'>
-                    
-                    <Link style={{textDecoration:'none'}}to={'/'+ item }>{item}</Link>
+                <li onClick={tag}>
+                    <Link className='Item'to={'/'+ item }>{item}</Link>
                 </li>  
-             )    
+               
+        )    
     });
 
     return(
-        <div className='Container'>
+        <div className='Container-Nav'>
             <div className='Main'> 
-               
-                  <a href="/profile">profile</a>
-
+                <div>
+                    Logo {/* <img className='ImgLang' src={login}></img> */}
+                </div>
                 <div className="Forms">
-                    <SearchForm></SearchForm>
+                    <SearchForm/>
                 </div>
             </div>
-            <div className='Nav-Items'>
-                <ul className='Items'>{items}</ul>
-                 <button type="button" onClick={() => dispatch(handleLogout())}>
-                    logout
-                </button>
-            </div>
+            {/* <div className='Nav-Items'> */}
+                <ul className='Items'>
+                    {items}
+                </ul>
+            {/* </div> */}
                 {/* <img className='ImgLang' src={user.langage}></img> */}
                
         </div>

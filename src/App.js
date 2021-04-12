@@ -9,6 +9,7 @@ import './App.scss';
 import WelcomePage from './Components/layout/WelcomePage/WelcomePage';
 import NavBar from './Components/NavBar/NavBar';
 import Profile from './Components/routes/Profile/Profile';
+import  Chat  from './Components/Chat/Chat';
 
 //Routes
 
@@ -46,7 +47,7 @@ function App() {
         </header>
         <div className="App-main">
           <div className="App-sidebar"> 
-              sidebar
+              <Chat/> sidebar
           </div>
           <div className="App-container">
             
