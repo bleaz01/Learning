@@ -5,6 +5,8 @@ import {useDispatch} from 'react-redux';
 import Button from '../../Item/Button/Button';
 import Input from '../../Item/Input/Input';
 import useAuthentication from "../../../lib/hooks/useAuthent"
+import GoogleBtn from "./GoogleBtn"
+
 import {useMutation} from '@apollo/client'
 import { ADD_USER } from '../../../lib/apollo/mutation'
 
@@ -21,12 +23,13 @@ const RegisterForm = ()=>{
 
     const onSubmit = data =>  {
 
-        const use = data
+        console.log(data)
+        // const use = data
 
-        handleUserRegistration(use).then(()=>{
-            // addUser({ variables: { email: data.email, password: data.password } });
-            console.log("successsfuly")
-        })
+        // handleUserRegistration(use).then(()=>{
+        //     // addUser({ variables: { email: data.email, password: data.password } });
+        //     console.log("successsfuly")
+        // })
 
     }
 
@@ -34,10 +37,7 @@ const RegisterForm = ()=>{
         
         <div className='RegisterForm-Container'>
             <div className='RegisterForm-Title'>
-                Logo
-                {/* <div className="RegisterFrom-Icon">
-                    Logo
-                </div> */}
+              <h2>Register</h2>
             </div>
            <form className='RegisterForm-Form' onSubmit={handleSubmit(onSubmit)}>
                 <Input
@@ -52,14 +52,16 @@ const RegisterForm = ()=>{
                     // defaultValue={defaultValue && 'test'} 
                     inputRef={register} 
                 />
-                 {/* <select className='FormBase-input' name="role" ref={register}>
+                 <select className='FormBase-input' name="role" ref={register}>
                     <option value="student">Student</option>
                     <option value="teacher">Teacher</option>
-                 </select> */}
+                 </select>
                  <Button buttonSize={"small"} onclick={onSubmit}>Register</Button> 
 
             </form>  
-
+            <div style={{margin:"20px"}}>
+                <GoogleBtn/>
+            </div>
         </div>
 
     )

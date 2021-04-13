@@ -22,7 +22,6 @@ import actu from "../../../assets/actu.png"
 
 
 import "./WelcomePageStyleSheet.scss"
-import GoogleBtn from "../GoogleBtn"
 import Listing from "../../Item/Listing/Listing"
 import CardWelcomePage from "../../Item/CardItem/CardWelcomePage/CardWelcomePage"
 // import Login from "../../routes/Login/Login"
@@ -32,7 +31,6 @@ import CardWelcomePage from "../../Item/CardItem/CardWelcomePage/CardWelcomePage
 
                             // Add after Welcome design down \\
 
-//      <Button buttonSize={"small"} onclick={openRegisterModal}> Register </Button>  \\
 //      <Button buttonSize={"small"} onclick={openLoginModal}> Login</Button>         \\
 
                             //           ---------             \\
@@ -40,24 +38,14 @@ import CardWelcomePage from "../../Item/CardItem/CardWelcomePage/CardWelcomePage
 
 const WelcomePage =()=>{
 
-    const [modalRegisterIsOpen,setRegisterIsOpen] = useState(false);
     const [modalLoginIsOpen,setLoginIsOpen] = useState(false);
 
-
-
-    const openRegisterModal = () =>{
-        setRegisterIsOpen(true);
-        
-    }
+  
     const openLoginModal =()=>{
         setLoginIsOpen(true)
 
     }
-
-    const closeRegisterModal = () =>{
-        setRegisterIsOpen(false);
-    }
-
+  
     const closeLoginModal =()=>{
         setLoginIsOpen(false)
     }
@@ -66,7 +54,7 @@ const WelcomePage =()=>{
        'one',
        'two',
        'three',
-       'four'
+      
    ]
 
   
@@ -87,10 +75,12 @@ const WelcomePage =()=>{
                         suscipit quas? Nulla, placeat. 
                     </p>
                     <div>
-                        <Button buttonStyles="color-blue">Begond</Button>
+                        <Button onclick={openLoginModal} buttonStyles="color-blue">Begond</Button>
                     </div>
                 </div>
-                <img className="img" src={img}  alt={img} />    
+                <div className="register-content">
+                    <RegisterForm/>
+                </div>
             </div>
             <div className={`section ${section[1]}`}>
                 <h2 className="title-2">Wie wilt u zijn?</h2>
@@ -149,8 +139,8 @@ const WelcomePage =()=>{
                     </div>
                 </div>
             </div>
-            <div className={`section ${section[3]}`}>
-                    3
+            <div className='Welcome-fouter'>
+                    
             </div>
            
 
@@ -163,10 +153,7 @@ const WelcomePage =()=>{
             <ModalBase closeModal={closeLoginModal} modalIsOpen={modalLoginIsOpen}>
                 <LoginForm/>
             </ModalBase>
-            
-            <ModalBase closeModal={closeRegisterModal} modalIsOpen={modalRegisterIsOpen}>
-                <RegisterForm/>
-            </ModalBase>
+          
         </div>
       
     )

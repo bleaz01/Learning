@@ -42,9 +42,86 @@
 }
 
 .App-footer{
-  background-color: blue;
+  background-color: #f2f2f2;
+  padding: 1rem 1.5rem;
+  background-color: #435df8;
   flex-basis: 100%;
+  // -webkit-clip-path: polygon(63% 79%, 100% 3%, 100% 100%, 0 100%, 32% 74%);
+  // clip-path: polygon(63% 79%, 100% 3%, 100% 100%, 0 100%, 32% 74%);
+   p{
+     text-align: center;
+   }
+}
+
+//SideBAr
+
+.sideBar-content{
+  background-color: #f2f2f2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+}
+.sideBar-title{
+    text-transform: capitalize;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: "Open sans", sans-serif;
+    color: #2e2e2e;
+    padding-bottom: 0.1rem;
+}
+.sideBar-content-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 6rem;
+  border-bottom: #435df8 solid;
+}
+.sideBar-content-body{
+  margin-top: 2rem;
+}
+.sideBar-items{
+  display: flex;
+  width: 100%;
+
+  p{
+    color: #2e2e2e;
+    margin: 0.4rem 0.6rem;
+   
+  }
+  p:hover{
+    color: #f2f2f2;
+  }
+  i{
+    color: #f2f2f2;
+  }
+}
+.sideBar-items:hover{
+  background-color: #435ef83b;
+  color: #f2f2f2;
+  border-radius: 10px;
   
+}
+.sideBar-icon{
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50px;
+  background-color: #435df8;
+  opacity: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sideBar-img{
+  width: 3rem;
+  height: 3rem;
+  img{
+    border-radius: 50px;
+
+  }
 }
 
 

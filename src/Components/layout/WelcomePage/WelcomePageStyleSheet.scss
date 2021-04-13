@@ -10,13 +10,18 @@
    
 }
 .text-content{
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
-    padding-left: 2rem;
+    padding: 1rem 2.5rem;
     justify-content: center;
     animation: text-anim 1.9s; 
 
+}
+.register-content{
+    width: 50%;
+    padding: 1rem 2.5rem;
+    background-image: url('./backgroundRegister.png');
 }
 .title{
     font-size: 2rem;
@@ -60,6 +65,7 @@
     min-height: 300px;
     display: flex;
     flex-direction: column;
+   
 }
 .img{
     width: 40rem;
@@ -70,6 +76,7 @@
     display: flex;
     flex-direction: row;
     background-color:#f2f2f2;
+    justify-content: space-between;
 }
 
 .two{
@@ -80,8 +87,13 @@
 
 .three{
    background-color: #f2f2f2;
-   padding: 3rem 12rem;
+   padding: 3rem 0;
    
+}
+.Welcome-fouter{
+    width: 100%;
+    height: 5rem;
+    background-image: url("./welcom-footer.png");
 }
 .box{
     display: flex;
@@ -115,11 +127,6 @@
     display: flex;
     // color: #435df8;
 }
-.four{
-    background-color:rgb(54, 92, 59);
-
-}
-
 
 @keyframes text-anim{
     0%{ opacity: 0;

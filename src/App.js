@@ -10,6 +10,7 @@ import WelcomePage from './Components/layout/WelcomePage/WelcomePage';
 import NavBar from './Components/NavBar/NavBar';
 import Profile from './Components/routes/Profile/Profile';
 import  Chat  from './Components/Chat/Chat';
+import MyImg from './assets/jeason.jpg';
 
 //Routes
 
@@ -37,8 +38,8 @@ function App() {
 
     <div className="App">
       {
-      // user.user? 
-        logged?
+      user? 
+      // logged?
       <>
       <Router>
       
@@ -47,7 +48,22 @@ function App() {
         </header>
         <div className="App-main">
           <div className="App-sidebar"> 
-              <Chat/> sidebar
+              <div className="sideBar-content">
+                <div className="sideBar-content-header">
+                  <div className="sideBar-img">
+                    <img src={MyImg} alt='img user'/>
+                  </div>
+                  <h2 className='sideBar-title'>title <span>Lv 11</span></h2>
+                </div>
+                <div className="sideBar-content-body">
+                  <div className="sideBar-items">
+                    <div className="sideBar-icon">
+                      <i class="fas fa-book fa-1x"></i>
+                    </div>
+                    <p>Een stuk samevading</p>
+                  </div>
+                </div>
+              </div>
           </div>
           <div className="App-container">
             
@@ -79,7 +95,7 @@ function App() {
         </div>
         
         <footer className="App-footer">
-          footer
+          <p> © 2020-2021 Riguelle Jeason </p>
         </footer>
       </Router>
       </>
