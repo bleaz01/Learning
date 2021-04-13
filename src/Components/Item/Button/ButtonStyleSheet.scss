@@ -1,22 +1,24 @@
 .btn{
     min-width: 100px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Open sans", sans-serif;
     font-weight: 400;
     border-radius: 10px;
     margin: 5px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 1s;
 }
+
 .btn:hover{
-    transition: translateY(-3px);
+    transform: translateY(1rem);
 }
 
 // Button color and size
 .color-base{
-    background-color: #6c7594;
+    background-color:#435df8;
     color:white;
     border:none
 }
+
 .color-purple{
     background-color: #7d12f8;
     color: white;

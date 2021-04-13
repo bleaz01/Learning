@@ -1,0 +1,71 @@
+.Card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin:0 6rem;
+    -webkit-box-shadow: 1px 2px 20px 5px rgba(0,0,0,0.41); 
+    box-shadow: 0px 0px 19px -14px rgba(46,46,46,1);
+    transition: all 1.5s;
+   
+}
+
+.Card-content-row{
+    height: 3rem;
+    display: flex;
+    margin: 0.5rem 3rem;
+    -webkit-box-shadow: 1px 2px 20px 5px rgba(0,0,0,0.41); 
+    box-shadow: 0px 0px 19px -14px rgba(46,46,46,1);
+    border-radius: 2rem;
+    transition: all 1.5s;
+   
+}
+.Card-content:hover{
+    -webkit-box-shadow: -1px 1px 14px 5px rgba(0,0,0,0.71); 
+    box-shadow: -1px 1px 14px 5px rgba(0,0,0,0.71);
+   
+
+}
+
+.Card-icon-row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 10%;
+    background-color: #435df8;
+    margin-right: 0.5rem;
+    -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 100%, 0 0);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 100%, 0 0);
+}
+.Card-icon{
+    color:#435df8
+    
+}
+.title-card{
+    font-size: 1.3rem;
+    font-family: 'Open sans',sans-serif;
+    padding-top: 0.7rem;
+    text-align: center;
+    color:#2e2e2e;
+}
+.title-card-row{
+    padding-top: 0.9rem;
+    font-size: 1rem;
+    font-family: 'Open sans',sans-serif;
+    color:#2e2e2e;
+}
+.text-card{
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding-left: 0.3rem;
+    font-family: 'Open sans',sans-serif;
+    color:#2e2e2e;
+}
+.Card-text{
+    display: flex;
+    flex-direction: column;
+}
+.Card-button{
+
+}

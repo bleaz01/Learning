@@ -37,8 +37,8 @@ function App() {
 
     <div className="App">
       {
-      user.user? 
-
+      // user.user? 
+        logged?
       <>
       <Router>
       
