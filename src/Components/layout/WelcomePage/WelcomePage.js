@@ -24,8 +24,7 @@ import actu from "../../../assets/actu.png"
 import "./WelcomePageStyleSheet.scss"
 import Listing from "../../Item/Listing/Listing"
 import CardWelcomePage from "../../Item/CardItem/CardWelcomePage/CardWelcomePage"
-// import Login from "../../routes/Login/Login"
-
+import Img2 from './section4-background.png'
 
 
 
@@ -54,6 +53,7 @@ const WelcomePage =()=>{
        'one',
        'two',
        'three',
+       'four'
       
    ]
 
@@ -137,6 +137,11 @@ const WelcomePage =()=>{
                             rowStyle={true}
                         />
                     </div>
+                </div>
+            </div>
+            <div className={`section ${section[3]}`}>
+                <div className="section-four-text">
+                    text
                 </div>
             </div>
             <div className='Welcome-fouter'>

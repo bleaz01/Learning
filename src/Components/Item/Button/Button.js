@@ -9,6 +9,7 @@ const Button = ({children, type, onclick, buttonStyles, buttonSize}) =>{
         "color-blue",
         "color-red",
         "color-green",
+        "color-white"
         
     ]
 

@@ -90,10 +90,33 @@
    padding: 3rem 0;
    
 }
+.four{
+    display: flex;
+    flex-direction: row;
+    background-image: url('./section4-background.png');
+    background-repeat: no-repeat;  
+    background-position: center;
+    background-size: contain;
+    max-height: 20rem; 
+    // img{
+    //     width: auto;
+    //     height: 15rem;
+    //     padding: 5rem 0;
+    // }
+}
+.section-four-text{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5rem;
+    width: 25rem;
+}
+
 .Welcome-fouter{
     width: 100%;
     height: 5rem;
-    background-image: url("./welcom-footer.png");
+    background-color: #f2f2f2;
+    // background-image: url("./welcom-footer.png");
 }
 .box{
     display: flex;

@@ -16,6 +16,7 @@ import { useForm } from "react-hook-form";
 
 import './MessengerStyleSheet.scss'
 import FormBase from '../../Forms/FormBase/FormBase';
+import SideBar from '../../layout/ModalSidebar/SideBar';
 
 
 
@@ -41,12 +42,37 @@ const Messenger = () =>{
     }
     
     return(
-            <div className="Msg-container">
+        <div className="Msg-container">
+            <SideBar>
+                Messenger
+            </SideBar>
+            <div className="Msg-Main">
                 <div className="Msg-header">
                     title
                 </div>
                 <div className="Msg-content">
-                    {/* {handleMessage} */}
+                    
+                </div>
+                <div className="Msg-footer">
+                    <div className="Msg-form">
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <input name="text" defaultValue="..." ref={register} />
+
+                        <input type="submit" />
+                    </form>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+          
+    )
+}
+
+export default Messenger;
+
+
+  {/* {handleMessage} */}
                     {/* {ui.map((name)=>{
                         console.log(ui,'now')
                         return <div>
@@ -56,18 +82,3 @@ const Messenger = () =>{
                     {/* <button onClick={ ()=> console.log("lkdlk")}>
                         send
                     </button> */}
-                </div>
-                <div className="Msg-footer">
-                    <div className="Msg-form">
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <input name="text" defaultValue="..." ref={register} />
-        
-                        <input type="submit" />
-                    </form>
-                    </div>
-                </div>
-            </div>
-    )
-}
-
-export default Messenger;

@@ -13,6 +13,7 @@ import GetItem from '../../layout/GetItem'
 //style
 import './VocabularyStyleSheet.scss'
 import SelectModal from '../../Modals/SelectModal/SelectModal';
+import SideBar from '../../layout/ModalSidebar/SideBar';
 
 
 const Vocabulary = ()=>{
@@ -22,15 +23,22 @@ const Vocabulary = ()=>{
     let slug = name.pathname.split("/")[2]
 
 
-    return (
+    return (   
         <div className='Voc-container'>
-            <div className='Voc-header'>
-                <SelectModal/>
+            <SideBar>
+                Vocabulary
+            </SideBar>
+            <div className="Voc-header">
+                <div className='Voc-main'>
+                    <SelectModal/>
+                </div>
+                <div className='Voc-body'>
+                    <GetItem name={slug} />
+                </div>
             </div>
-            <div className='Voc-body'>
-                <GetItem name={slug} />
-            </div>
+            
         </div>
+        
     )
 }
 

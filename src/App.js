@@ -11,6 +11,7 @@ import NavBar from './Components/NavBar/NavBar';
 import Profile from './Components/routes/Profile/Profile';
 import  Chat  from './Components/Chat/Chat';
 import MyImg from './assets/jeason.jpg';
+import SideBar from './Components/layout/ModalSidebar/SideBar';
 
 //Routes
 
@@ -42,31 +43,11 @@ function App() {
       // logged?
       <>
       <Router>
-      
         <header className="App-header">
           <NavBar user={user}/>
         </header>
         <div className="App-main">
-          <div className="App-sidebar"> 
-              <div className="sideBar-content">
-                <div className="sideBar-content-header">
-                  <div className="sideBar-img">
-                    <img src={MyImg} alt='img user'/>
-                  </div>
-                  <h2 className='sideBar-title'>title <span>Lv 11</span></h2>
-                </div>
-                <div className="sideBar-content-body">
-                  <div className="sideBar-items">
-                    <div className="sideBar-icon">
-                      <i class="fas fa-book fa-1x"></i>
-                    </div>
-                    <p>Een stuk samevading</p>
-                  </div>
-                </div>
-              </div>
-          </div>
           <div className="App-container">
-            
             <Suspense fallback={<div>Chargement...</div>}>
               <Switch>
                 <Route exact path={"/home"}>
@@ -89,11 +70,8 @@ function App() {
                 </Route>
               </Switch>
             </Suspense> 
-          
           </div>
-         
         </div>
-        
         <footer className="App-footer">
           <p> © 2020-2021 Riguelle Jeason </p>
         </footer>

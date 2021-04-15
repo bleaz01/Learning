@@ -1,34 +1,40 @@
 .Voc-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.Voc-header{
     height: 100%;
     display: flex;
     flex-direction: column;
-   
+    width: 100%;
+}
 
    
-    .Voc-header{
-        min-height: 300px;
-        flex-basis: 40vh;
-        background-image: url('./assets/bg-vocabulaire.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        background-color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+.Voc-main{
+    min-height: 300px;
+    flex-basis: 40vh;
+    background-image: url('./assets/bg-vocabulaire.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 
 
-    }
+}
 
-    .Voc-body{
-        flex-basis: 60vh;
-        display:flex;
-        flex-direction: row;
-        margin: 20px 30px;
-        flex-wrap: wrap;
-        justify-content: space-between;
-       
-        
+.Voc-body{
+    flex-basis: 60vh;
+    display:flex;
+    flex-direction: row;
+    margin: 20px 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    
 
-    }
 }

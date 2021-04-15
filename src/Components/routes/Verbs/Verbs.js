@@ -10,6 +10,7 @@ import './VerbsStyleSheet.scss'
 import SearchForm from '../../Forms/SeachForms/SearchForm';
 import CardVerbs from '../../Item/CardItem/CardVerbs/CardVerbs';
 import GetItemVerbs from '../../layout/GetItemVerb';
+import SideBar from '../../layout/ModalSidebar/SideBar';
 
 
 
@@ -28,12 +29,16 @@ const Verbs = () =>{
     )
     return (
         <div className='Verb-container'>
-           {data &&  <div className='Verb-header'>
-                <div className="Verb-forms">     
-                    <SearchForm
-                    dataSearch={data}
-                    />
-                </div>
+            <SideBar>
+                Verbum
+            </SideBar >
+          <div className="Verb-Main">
+          {data &&  <div className='Verb-header'>
+                    <div className="Verb-forms">     
+                        <SearchForm
+                        dataSearch={data}
+                        />
+                    </div>
             </div>}
             <div className='Verb-body'>
                 <div className='Verb-banner'>
@@ -49,7 +54,10 @@ const Verbs = () =>{
             <div className='Verb-footer'>
                 
             </div>
+          </div>
+             
         </div>
+       
     )
 }
 

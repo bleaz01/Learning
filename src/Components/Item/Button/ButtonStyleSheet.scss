@@ -9,7 +9,7 @@
 }
 
 .btn:hover{
-    transform: translateY(1rem);
+    transform: translateY(0.5rem);
 }
 
 // Button color and size
@@ -37,6 +37,11 @@
 .color-green{
     background-color: #2e9264;
     color: white;
+    border: none;
+}
+.color-white{
+    background-color: white;
+    color: #435df8;
     border: none;
 }
 

@@ -1,60 +1,68 @@
-.Verb-container{
 
+
+.Verb-container{
+    display: flex;
+    flex-direction: row;
+  
+}   
+.Verb-Main{
     height: 100%;
     display: flex;
     flex-direction: column;
-   
+    width: 100%;
+}
+.Verb-header{
+    flex-basis: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: dimgrey;
+}
 
-    .Verb-header{
-        flex-basis: 20%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        background-color: dimgrey;
-
-        .Forms{
-            margin-left: 10px ;
-            width: 300px;
-            border: none;
-              
-        }
+.Forms{
+    margin-left: 10px ;
+    width: 300px;
+    border: none;
         
-        
+}
     
-    }
-
-    .Verb-body{
-
-        display: flex;
-        flex-direction: column;
-        margin: 10px;
-
-        .Verb-banner{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            
-           h4{
-               width: auto;
-               padding: 5px 10px
-              
-           }
-        }
-        
-        .Verb-content{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-            margin-top: 20px;
     
-        }
 
-    }
 
-    .Verb-footer{
 
-    }
+.Verb-body{
+
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+
+}       
+ .Verb-banner{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+ }
+h4{
+    width: auto;
+    padding: 5px 10px
+    
+}
+
+        
+.Verb-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 20px;
+
+}
+
+ 
+
+.Verb-footer{
+
+    
 }
 

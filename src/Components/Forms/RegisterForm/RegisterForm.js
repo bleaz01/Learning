@@ -56,7 +56,7 @@ const RegisterForm = ()=>{
                     <option value="student">Student</option>
                     <option value="teacher">Teacher</option>
                  </select>
-                 <Button buttonSize={"small"} onclick={onSubmit}>Register</Button> 
+                 <Button buttonStyles="color-white" buttonSize="small" onclick={onSubmit}>Register</Button> 
 
             </form>  
             <div style={{margin:"20px"}}>

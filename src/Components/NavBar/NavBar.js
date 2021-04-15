@@ -45,17 +45,17 @@ const NavBar = ({user})=>{
         <div className='Container-Nav'>
             <div className='Main'> 
                 <div>
-                    Logo {/* <img className='ImgLang' src={login}></img> */}
+                    <i class="fas fa-search fa-1x"></i>   
                 </div>
                 <div className="Forms">
                     <SearchForm/>
                 </div>
             </div>
-            {/* <div className='Nav-Items'> */}
+            <div className='Nav-Items'>
                 <ul className='Items'>
                     {items}
                 </ul>
-            {/* </div> */}
+            </div>
                 {/* <img className='ImgLang' src={user.langage}></img> */}
                
         </div>
