@@ -18,7 +18,7 @@ import SideBar from '../../layout/ModalSidebar/SideBar';
 
 const Vocabulary = ()=>{
 
-    let {path,url} = useRouteMatch()
+    // let {path,url} = useRouteMatch()
     let name = useLocation()
     let slug = name.pathname.split("/")[2]
 

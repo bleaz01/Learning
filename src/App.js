@@ -1,5 +1,5 @@
 import React, { Suspense, lazy ,useState, useEffect} from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, useLocation } from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux"
 import useAxios from 'axios-hooks'
 import useAuthentication from "./lib/hooks/useAuthent"
@@ -23,6 +23,7 @@ const Messenger = lazy(() => import('./Components/routes/Messenger/Messenger'));
 
 
 function App() {
+
 
   const dispatch = useDispatch()
   const { handleAuthentication } = useAuthentication(dispatch)
@@ -53,16 +54,16 @@ function App() {
                 <Route exact path={"/home"}>
                   <Home/>
                 </Route>
-                <Route path="/Spelletjes">
+                <Route path="/spelletjes">
                   <Games/>
                 </Route>
-                <Route path="/Verbum">
+                <Route path="/verbum">
                   <Verbs/>
                 </Route>
-                <Route path="/Woordenschat">
+                <Route path="/vocabulary">
                   <Vocabulary/>
                 </Route>
-                <Route path="/Conversatie">
+                <Route path="/messenger">
                  <Messenger />
                 </Route>
                 <Route path ="/Profile">

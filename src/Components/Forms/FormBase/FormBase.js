@@ -17,9 +17,6 @@ const FormBase = ( {
     // console.log(watch("search")); // watch input value by passing the name of it
 
 
-    
-
-
     return(
         <div className='FormBase-container'>
              <form className={StyleForm} onSubmit={handleSubmit(onSubmit)}>

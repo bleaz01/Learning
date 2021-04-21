@@ -50,7 +50,7 @@ const SearchForm = ({dataSearch})=>{
                 placeholder='search'
                 onchange={handledChange}
                 defaultValue=''
-                StyleForm
+                StyleForm='styleFormSearch'
 
             />
            

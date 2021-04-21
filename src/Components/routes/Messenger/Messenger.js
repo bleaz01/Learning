@@ -17,6 +17,7 @@ import { useForm } from "react-hook-form";
 import './MessengerStyleSheet.scss'
 import FormBase from '../../Forms/FormBase/FormBase';
 import SideBar from '../../layout/ModalSidebar/SideBar';
+import Button from '../../Item/Button/Button';
 
 
 
@@ -48,18 +49,28 @@ const Messenger = () =>{
             </SideBar>
             <div className="Msg-Main">
                 <div className="Msg-header">
-                    title
+                    Group Name
                 </div>
                 <div className="Msg-content">
+                    <div className='msg-boxe'>
+                            <span>yello</span>
+                            <div className="corner"></div>
+                    </div>
                     
                 </div>
                 <div className="Msg-footer">
                     <div className="Msg-form">
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <input name="text" defaultValue="..." ref={register} />
-
-                        <input type="submit" />
-                    </form>
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <textarea  className="textarea-style" name="msg" defaultValue="..." ref={register} />
+                            <div style={{ display:"flex", flexDirection:"column"}}>
+                                <Button onclick={onSubmit}>
+                                    send
+                                </Button>
+                                <Button onclick={onSubmit}>
+                                    <i class="fas fa-video fa-1x"></i>
+                                </Button>
+                            </div>      
+                        </form>
                     </div>
                 </div>
             </div>

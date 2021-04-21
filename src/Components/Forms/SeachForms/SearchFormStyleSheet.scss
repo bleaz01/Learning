@@ -1,11 +1,15 @@
 .Form-container{
  display: flex;
  width: 100%;
- background-color: aqua;
+ align-items: center;
+ justify-content: center;
+ background-color:#435df8;
 
 }
-.Input{
-  border: 'none';
-  height:'100%';
-  width:"100%";
+.styleFormSearch{
+  display: flex;
+  justify-content: center;
+  background-color:#435df8;
+  color:white
+
 }

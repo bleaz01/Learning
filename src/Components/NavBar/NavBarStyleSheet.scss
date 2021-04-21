@@ -1,60 +1,68 @@
 
 
 .Container-Nav{
-    padding: 1rem;
     display: flex;
     // justify-content: space-between;
-    align-items: center;
 
 }
 
-.Main{
-   display: flex;
-   align-items: center;
-   margin-right: 5rem;
-    
+.Main-Nav{
+    width: 15.8rem;
+
+
 }
 .Nav-Items{
     display: flex;
-    justify-content: flex-end;
-    width: 60%;
+    align-self: center;
+    justify-content: center;
+   
 }
-.Item{
-
-}
-// .ImgLang{
-
-// }
-
-// .Forms{
- 
-    
-// }
-
-
 
 .Items{
     display: flex;
     justify-content: space-between;
     list-style: none;
-
-    width: 60%;
+    width: auto;
 
     
 }
 .Item{
     text-transform: capitalize;
     text-decoration: none;
+    margin: 0rem 0.5rem;
     font-size: 1.2rem;
     font-family: "Open sans",sans-serif;
     font-weight: bold;
-    color: #2e2e2e;
-    padding-bottom: 0.1rem;
-    margin-left: 0.5rem;
+    color: #435df8;
+    opacity: 0.5;
+    padding: 0.7rem 3rem;
     transition: all 0.5s;
+
+   
 }
-.Item:hover{
+.Item-current{
+    text-transform: capitalize;
+    text-decoration: none;
+    margin: 0rem 0.5rem;
+
+    font-size: 1.2rem;
+    font-family: "Open sans",sans-serif;
+    font-weight: bold;
+    color: #435df8;
+    opacity: 0.5;
+    padding: 0.7rem 3rem;
+    transition: all 0.5s;
     color:#435df8;
     border-bottom: 2px  #435df8 solid;
+    opacity: 1;
+
+    
+}
+.Item:hover{
+
+    border-radius: 5px;
+    background-color:#435df8 ;
+    color: white
+    
 }
 
