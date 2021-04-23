@@ -5,11 +5,11 @@ import {useDispatch} from 'react-redux';
 //StyleSheet
 import './NavBarStyleSheet.scss';
 
-import ndl from '../../assets/ndl.jpg';
-import login from '../../assets/jeason.jpg';
+// import ndl from '../../assets/ndl.jpg';
+// import login from '../../assets/jeason.jpg';
 import SearchForm from '../Forms/SeachForms/SearchForm';
-import Button from '../Item/Button/Button';
-import { handleLogout } from '../../lib/redux/actions/authentication';
+// import Button from '../Item/Button/Button';
+// import { handleLogout } from '../../lib/redux/actions/authentication';
 
 
 const NavBar = ({user})=>{
@@ -19,8 +19,6 @@ const NavBar = ({user})=>{
     
 
     const dispatch = useDispatch()
-    const [langImg, setLangImg] = useState(ndl);
-    const [loginImg, setLoginImg] = useState(login)
     const [listItems, setListItems] = useState([
         'home',
         'comment',
@@ -32,8 +30,6 @@ const NavBar = ({user})=>{
 
     const items = listItems.map((item)=>{
         let tag = null
-        if(item == slug) tag = true
-
         const route  =  {
             "home" : "home" ,
             "comment" : "messenger" ,
@@ -41,20 +37,20 @@ const NavBar = ({user})=>{
             "spell-check" : "verbum" ,
             // "whistle and flute" : "Suit" ,
           } ;
-          
+          if(route[item] == slug) tag = true
+
         return (
-                
-                <li>
-                    <Link className={tag ? 'Item-current': 'Item'}to={'/'+ route[item] }><i class={`fas fa-${item} fa-1x`}></i></Link>
-                </li>  
-               
+            <li>
+                <Link className={tag ? 'Item-current': 'Item'}to={'/'+ route[item] }>
+                    <i class={`fas fa-${item} fa-1x`}></i>
+                </Link>
+            </li>     
         )    
     });
 
     return(
         <div className='Container-Nav'>
             <div className='Main-Nav'> 
-               
                 <SearchForm/>
             </div>
             <div className='Nav-Items'>

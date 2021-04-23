@@ -13,7 +13,7 @@ const Home=()=>{
   // if(error) return console.log(error)
   // if(!data) return <div>no data</div>
 
-  console.dir(data)
+  // console.dir(data)
     return(
       <div className="Home-container">
               <SideBar>
