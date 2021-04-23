@@ -2,7 +2,16 @@
 
 .Container-Nav{
     display: flex;
+    // margin-top: 1rem;
     // justify-content: space-between;
+    // background-color: #F4F5F7 ;
+    background:#435df8;
+    box-shadow: inset -2px -2px 25px 0 rgb(255 255 255 / 40%);
+    backdrop-filter: blur(6px);
+    z-index: 4;
+    opacity: 0.9;    
+    resize: none;
+
 
 }
 
@@ -33,8 +42,7 @@
     font-size: 1.2rem;
     font-family: "Open sans",sans-serif;
     font-weight: bold;
-    color: #435df8;
-    opacity: 0.5;
+    color: #ADEAD2;
     padding: 0.7rem 3rem;
     transition: all 0.5s;
 
@@ -61,7 +69,7 @@
 .Item:hover{
 
     border-radius: 5px;
-    background-color:#435df8 ;
+    background-image: linear-gradient(134deg, #016AEA 0%, #BA0086 100%);    font-size: small;
     color: white
     
 }

@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import {handleUsername, socket} from "../../../lib/socket-io"
+import React, { useEffect, useRef, useState } from 'react';
+import {handleUsername,  socket} from "../../../lib/socket-io"
 import {useDispatch, useSelector} from "react-redux"
 
 
@@ -10,7 +10,7 @@ import {
     createRoom,
     sendMessage,
     getMessage,
-    showMyMessage
+    // showMyMessage
 } from "./index"
 import { useForm } from "react-hook-form";
 
@@ -24,37 +24,65 @@ import Button from '../../Item/Button/Button';
 
 const Messenger = () =>{
     let user = useSelector((state) => state.user)
+    const [response, setResponse] = useState([])
+    const [theArray, setTheArray] = useState([]);
 
-    user = user.user._profile.data.email
-    console.log(user)
-   useEffect(()=>{
-       let i = 0
-       handleUsername(user)
+    const { register, handleSubmit } = useForm();
+
+    // console.log(user)
+
+  
+    
+    // let socketRef = useRef()
+    useEffect(()=>{
+        let i = 0
+        socket.on('confirmMessage', (msg) => {
+            setTheArray(oldArray => [...oldArray, msg]);
+        })
+        socket.on('newMessage', (text, usernameSender) => {
+            setTheArray(oldArray => [...oldArray, text]);
+        })
+       
+        handleUsername(user)
         i++
+    },[4, ])
 
-   },[4])
-    const { register, handleSubmit, watch, errors } = useForm();
+    const renderTchat=()=>{
+    //    if(response){
+            return theArray.map((ms) =>{
+            //    console.log(ms.msg, '=> inside')
+                return <div className='buble-msg'>{ms.msg} </div> 
+                //  <div>{ms.msg}</div>
+           })
+    //    }
+    }
 
 
     const onSubmit = data => {
-        sendMessage(data.text)
+        if(data.msg != undefined){
+            sendMessage(data.msg)
+            console.log(data)
 
-        console.log(data)
+        }
+       
     }
-    
+    console.log("hhkj", theArray[0])
+
     return(
         <div className="Msg-container">
+            <div className='side'>
             <SideBar>
                 Messenger
             </SideBar>
+            </div>
             <div className="Msg-Main">
                 <div className="Msg-header">
                     Group Name
                 </div>
                 <div className="Msg-content">
                     <div className='msg-boxe'>
-                            <span>yello</span>
-                            <div className="corner"></div>
+                    {renderTchat()}
+                        <div className="corner"></div>
                     </div>
                     
                 </div>

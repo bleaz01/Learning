@@ -21,16 +21,18 @@ export const getNameRoom =()=>{
 
 
 export const sendMessage =(msg)=>{
-    socket.emit("sendMessage",msg)
+    socket.emit("sendMessage",{msg})
 }
 
-export const showMyMessage =()=>{
-    let text
-    socket.on("confirmeMesage",(_text)=> {
-        text = _text
-    })
-    return text
-}
+// export const showMyMessage =()=>{
+//     // let text
+//     socket.on("confirmeMesage",(_text)=> {
+//         // text = _text
+//         console.log(_text,"lecture")
+//     })
+//     // return text
+// }
+
 export const getMessage =()=>{
     let listMsg
     socket.on('getMessage',(_listMsg)=>{

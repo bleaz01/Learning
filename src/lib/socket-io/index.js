@@ -17,7 +17,7 @@ export const handleUsername =(_usernameWanted)=>{
 let isWriting = false,
     stopWriting
 
-export const sendMessage=(_text)=> {
+export const sendMessage = (_text) => {
     let text = _text.trim()
     if (text != '') {
         // Envoie du message
@@ -42,7 +42,6 @@ socket.on('acceptUsername', (_username, _allUsers) => {
 socket.on('rejectUsername', (_username) => {
   
     inputUsername = _username
-
     console.log(inputUsername,'reject')
     return inputUsername
 })
@@ -59,12 +58,8 @@ socket.on('leftUser', (_allUsers) => {
     // updateUsers(allUsers)
 })
 
-// Affichage d'un message
-socket.on('confirmMessage', (text) => {
-    // showMyMessage(text)
-    console.log(text,"hhkj")
 
-})
+
 socket.on('newMessage', (text, usernameSender) => {
     // showNewMessage(text, usernameSender)
     console.log(text,usernameSender,'newMessage')
