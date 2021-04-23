@@ -1,28 +1,29 @@
-.Msg-container{
+.Msg-container {
     width: 100%;
     // height: auto;
     display: flex;
 }
-.Msg-Main{
+
+.Msg-Main {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: auto;
     border-radius: 20px 0px 0px 20px;
     // background-color: #F4F5F7;
-    background-color: #Ffff ;
-
+    background-color: #Ffff;
 }
-.Msg-header{
+
+.Msg-header {
     flex-basis: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.Msg-content{
+.Msg-content {
     flex-basis: 75%;
-    background: rgba(223,255,251,0.50);
+    background: rgba(223, 255, 251, 0.50);
     border: 2px solid#E1F7E7;
     box-shadow: inset -2px -2px 25px 0 rgb(255 255 255 / 80%);
     border-radius: 20px;
@@ -33,54 +34,48 @@
     margin: 0 1rem;
     padding: 1rem 2rem;
 }
-.Msg-footer{
+
+.Msg-footer {
     flex-basis: 25%;
     display: flex;
     align-items: center;
-
 }
-.Msg-form{
+
+.Msg-form {
     flex-basis: 100%;
     flex-direction: row;
-
-    
-    
-    form{
+    form {
         display: flex;
         flex-direction: row;
-        border-radius: 5px ;
-        margin: 0 2rem ;
+        border-radius: 5px;
+        margin: 0 2rem;
         // background-color:#AECFE1 ;
     }
 }
 
-.textarea-style{
+.textarea-style {
     width: 90%;
     border: none;
     outline: none;
     padding: 0.5rem 1rem;
-    background:#AECFE1;
-    border: 2px solid rgba(255,255,255,0.50);
+    background: #AECFE1;
+    border: 2px solid rgba(255, 255, 255, 0.50);
     box-shadow: inset -2px -2px 25px 0 rgb(255 255 255 / 80%);
     border-radius: 20px;
     backdrop-filter: blur(6px);
     z-index: 4;
-    opacity: 0.9;    resize: none;
+    opacity: 0.9;
+    resize: none;
     margin: 0.2rem 0.5rem
-
 }
-        
-    
 
 //Msg box
-.side{
+.side {
     width: 20rem;
-    background-image: linear-gradient(134deg, #016AEA 0%, #BA0086 100%);    
     overflow: hidden;
-
-    
 }
-.msg-boxe{
+
+.msg-boxe {
     display: inline-block;
     padding: 12px 18px;
     max-width: 270px;
@@ -93,19 +88,18 @@
     border-radius: 20px 20px 10px 20px;
     -moz-border-radius: 20px 20px 10px 20px;
     -webkit-border-radius: 20px 20px 10px 20px;
-
 }
-.buble-msg{
+
+.buble-msg {
     border-radius: 10px;
     padding: 5px 10px;
     margin-top: 0.2rem;
-    background-image: linear-gradient(134deg, #016AEA 0%, #BA0086 100%);    
+    background-image: linear-gradient(134deg, #016AEA 0%, #BA0086 100%);
     font-size: small;
     color: #e5e5e5;
-
 }
-.corner{
 
+.corner {
     width: 36px;
     height: 12px;
     position: absolute;

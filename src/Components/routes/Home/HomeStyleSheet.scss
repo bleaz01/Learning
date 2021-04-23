@@ -1,7 +1,39 @@
-.Home-container{
- display: flex;
- flex-direction: row;
+.Home-container {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    height: 100vh;
 }
-.Home-main{
-    height: 70%;
+
+.Home-main {
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+    margin: 0 auto;
+    overflow-y: scroll;
 }
+
+.post {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-container {
+    margin: 20px 0;
+    display: flex;
+    width: 30rem;
+    height: 20rem;
+    background: rgba(223, 255, 251, 0.50);
+    border: 2px solid#E1F7E7;
+    box-shadow: inset -2px -2px 25px 0 rgb(255 255 255 / 80%);
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+    z-index: 4;
+    opacity: 0.9;
+}
+
+.post-header {}
+
+.post-body {}
+
+.post-footer {}
