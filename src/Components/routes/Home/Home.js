@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client";
 import { GET_USERS } from "../../../lib/apollo/queries";
 import SideBar from "../../layout/ModalSidebar/SideBar";
 import "./HomeStyleSheet.scss";
+import Post from "../../Item/Post/Post";
 
 const Home = () => {
   const { loading, data, error } = useQuery(GET_USERS);
@@ -33,23 +34,7 @@ const Home = () => {
       </div>
 
       <div className="Home-main">
-        <div className="post">
-          <div className="post-container">
-            <div className="post-header"></div>
-            <div className="post-body"></div>
-            <div className="post-footer"></div>
-          </div>
-          <div className="post-container">
-            <div className="post-header"></div>
-            <div className="post-body"></div>
-            <div className="post-footer"></div>
-          </div>
-          <div className="post-container">
-            <div className="post-header"></div>
-            <div className="post-body"></div>
-            <div className="post-footer"></div>
-          </div>
-        </div>
+        <Post />
       </div>
     </div>
   );
