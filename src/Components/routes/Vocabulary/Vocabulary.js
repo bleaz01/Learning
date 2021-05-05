@@ -20,6 +20,8 @@ const Vocabulary = () => {
   let name = useLocation();
   let slug = name.pathname.split("/")[2];
 
+ 
+
   return (
     <div className="Voc-container">
       <div className="side">

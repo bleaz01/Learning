@@ -12,7 +12,7 @@ import useAuthentication from "./lib/hooks/useAuthent";
 import "./App.scss";
 import WelcomePage from "./Components/layout/WelcomePage/WelcomePage";
 import NavBar from "./Components/NavBar/NavBar";
-import Profile from "./Components/routes/Profile/Profile";
+// import Profile from "./Components/routes/Profile/Profile";
 import Chat from "./Components/Chat/Chat";
 import MyImg from "./assets/jeason.jpg";
 import SideBar from "./Components/layout/ModalSidebar/SideBar";
@@ -41,7 +41,6 @@ function App() {
 
   return (
     <div className="App">
-<<<<<<< Updated upstream
       {user ? (
         // logged?
         <>
@@ -68,9 +67,9 @@ function App() {
                     <Route path="/messenger">
                       <Messenger />
                     </Route>
-                    <Route path="/Profile">
+                    {/* <Route path="/Profile">
                       <Profile />
-                    </Route>
+                    </Route> */}
                   </Switch>
                 </Suspense>
               </div>
@@ -83,50 +82,7 @@ function App() {
       ) : (
         <WelcomePage />
       )}
-=======
-      {
-      // user? 
-      logged?
-      <>
-      <Router>
-        <header className="App-header">
-          <NavBar user={user}/>
-        </header>
-        <div className="App-main">
-          <div className="App-container">
-            <Suspense fallback={<div>Chargement...</div>}>
-              <Switch>
-                <Route exact path={"/home"}>
-                  <Home/>
-                </Route>
-                <Route path="/spelletjes">
-                  <Games/>
-                </Route>
-                <Route path="/verbum">
-                  <Verbs/>
-                </Route>
-                <Route path="/vocabulary">
-                  <Vocabulary/>
-                </Route>
-                <Route path="/messenger">
-                 <Messenger />
-                </Route>
-                <Route path ="/Profile">
-                  <Profile />
-                </Route>
-              </Switch>
-            </Suspense> 
-          </div>
-        </div>
-        <footer className="App-footer">
-          <p> © 2020-2021 Riguelle Jeason </p>
-        </footer>
-      </Router>
-      </>
-     :
-     <WelcomePage/>
-    }  
->>>>>>> Stashed changes
+
     </div>
   );
 }
