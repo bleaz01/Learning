@@ -41,6 +41,7 @@ function App() {
 
   return (
     <div className="App">
+<<<<<<< Updated upstream
       {user ? (
         // logged?
         <>
@@ -82,6 +83,50 @@ function App() {
       ) : (
         <WelcomePage />
       )}
+=======
+      {
+      // user? 
+      logged?
+      <>
+      <Router>
+        <header className="App-header">
+          <NavBar user={user}/>
+        </header>
+        <div className="App-main">
+          <div className="App-container">
+            <Suspense fallback={<div>Chargement...</div>}>
+              <Switch>
+                <Route exact path={"/home"}>
+                  <Home/>
+                </Route>
+                <Route path="/spelletjes">
+                  <Games/>
+                </Route>
+                <Route path="/verbum">
+                  <Verbs/>
+                </Route>
+                <Route path="/vocabulary">
+                  <Vocabulary/>
+                </Route>
+                <Route path="/messenger">
+                 <Messenger />
+                </Route>
+                <Route path ="/Profile">
+                  <Profile />
+                </Route>
+              </Switch>
+            </Suspense> 
+          </div>
+        </div>
+        <footer className="App-footer">
+          <p> © 2020-2021 Riguelle Jeason </p>
+        </footer>
+      </Router>
+      </>
+     :
+     <WelcomePage/>
+    }  
+>>>>>>> Stashed changes
     </div>
   );
 }

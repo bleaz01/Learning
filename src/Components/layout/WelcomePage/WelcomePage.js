@@ -141,7 +141,6 @@ const WelcomePage =()=>{
             </div>
             <div className={`section ${section[3]}`}>
                 <div className="section-four-text">
-                    text
                 </div>
             </div>
             <div className='Welcome-fouter'>
