@@ -1,9 +1,13 @@
+@import '../../../../lib/sass/abstract/mixins';
+
 .CardVerbs-container{
     width: 15rem;
     height: 12rem;
     background:#016AEA;
     border-radius: 30px 30px;
-    box-shadow: inset -2px -2px 25px 0 rgb(255 255 255 / 80%);
+    // --v : 255 255 255 / 80%;
+    // @include box-shadow( inset -2px -2px 25px 0 rgba(var(--v)));
+    // @include box-shadow( inset -2px -2px 25px 0 rgb($v));
     display: flex;
     flex-direction: column;
     align-items: center;

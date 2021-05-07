@@ -19,7 +19,8 @@ const SideBar = ({children})=>{
   }
 
     return(
-      <div className="page-content">
+      <>
+        <div className="page-content">
         <div className="App-sidebar"> 
           <div className="sideBar-content">
             <div className="sideBar-content-header">
@@ -39,13 +40,41 @@ const SideBar = ({children})=>{
             </div>
           </div>
         </div>
+      </div>
 
-        
+      <div className="sideBar-list-icon">
+        <div className="sideBar-img">
+                <>
+                <img onClick={openModal} src={MyImg} alt='img user'/>
+                <ModalBase closeModal={closeModal} modalIsOpen={modalIsOpen}>
+                    <Profile/>
+                </ModalBase>
+                </>
+        </div>
+        <div className="list-icon">
+          <i  class="fas fa-bars "></i>
 
+        </div>
+        <div className="list-icon">
+          <i  class="fas fa-bars "></i>
 
+        </div>
+        <div className="list-icon">
+          <i  class="fas fa-bars "></i>
+
+        </div>
+        <div className="list-icon">
+          <i  class="fas fa-bars "></i>
+
+        </div>
+        <div className="list-icon">
+          <i  class="fas fa-bars "></i>
+
+        </div>
 
       </div>
-      
+      </>
+    
     )
 }
 export default SideBar

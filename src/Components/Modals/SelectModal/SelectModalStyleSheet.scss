@@ -1,8 +1,13 @@
+
+@import '../../../lib/sass/abstract/mixins';
+
 .SelectModal-container {
     min-width: 450px;
     background: #AECFE1;
     border: 2px solid rgba(255, 255, 255, 0.50);
-    box-shadow: inset -2px -2px 25px 0 rgb(255 255 255 / 80%);
+    // --v : 255 255 255 / 80%;
+    // @include box-shadow( inset -2px -2px 25px 0 rgba(var(--v)));
+    // @include box-shadow(inset -2px -2px 25px 0 rgb($v));
     border-radius: 20px;
     backdrop-filter: blur(6px);
     z-index: 4;

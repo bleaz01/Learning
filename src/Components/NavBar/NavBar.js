@@ -53,6 +53,10 @@ const NavBar = ({user})=>{
             <div className='Main-Nav'> 
                 <SearchForm/>
             </div>
+            <div className='menu-icon'>
+                <i  class="fas fa-bars"></i>
+
+            </div>
             <div className='Nav-Items'>
                 <ul className='Items'>
                     {items}

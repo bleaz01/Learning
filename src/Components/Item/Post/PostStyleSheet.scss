@@ -1,3 +1,4 @@
+@import '../../../lib/sass/abstract/mixins';
 .post {
     display: flex;
     flex-direction: column;
@@ -11,7 +12,8 @@
     height: 35rem;
     background: rgba(223, 255, 251, 0.50);
     border: 2px solid#E1F7E7;
-    box-shadow: inset -2px -2px 25px 0 rgb(255 255 255 / 80%);
+    // --v : 255 255 255 / 80%;
+    // @include box-shadow( inset -2px -2px 25px 0 rgba(var(--v)));
     border-radius: 20px;
     backdrop-filter: blur(6px);
     z-index: 4;

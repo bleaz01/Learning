@@ -1,8 +1,11 @@
+@import '../../../../lib/sass/abstract/mixins';
 .VocItem-container{
     display: inline-block;
     height: 135px;
     width: 135px;
-    box-shadow: inset -2px -2px 25px 0 rgb(255 255 255 / 40%);
+    // --v : 255 255 255 / 80%;
+    // @include box-shadow( inset -2px -2px 25px 0 rgba(var(--v)));
+    // @include box-shadow(inset -2px -2px 25px 0 rgb($v));
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     opacity: 0.9;
     border-radius: 20% ;
@@ -37,6 +40,8 @@
     
 }
 .VocItem-container:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    $erst: 0,0,0,0.25;
+    $tweede:0,0,0,0.22;
+    // @include box-shadow(0 14px 28px rgba($erst), 0 10px 10px rgba($tweede));
   }
   

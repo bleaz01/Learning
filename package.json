@@ -54,6 +54,7 @@
     "mime": "^1.6.0",
     "mini-css-extract-plugin": "0.11.3",
     "next-auth": "^3.1.0",
+    "node-sass": "4.14.1",
     "optimize-css-assets-webpack-plugin": "5.0.4",
     "pnp-webpack-plugin": "1.6.4",
     "postcss-flexbugs-fixes": "4.2.1",
@@ -94,10 +95,10 @@
     "workbox-webpack-plugin": "5.1.4"
   },
   "scripts": {
-    "start": "PORT=3006 node scripts/start.js",
+    "start": "PORT=3006 node scripts/start.js dart compile-sass.dart styles.scss styles.css",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "compile": "node-sass Scss/main.scss"
+    "compile:scss": "node-sass src/lib/scss/main.scss "
   },
   "eslintConfig": {
     "extends": [

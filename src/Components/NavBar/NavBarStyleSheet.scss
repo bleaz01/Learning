@@ -1,4 +1,5 @@
 
+@import '../../lib/sass/abstract/mixins';
 
 .Container-Nav{
     display: flex;
@@ -6,7 +7,9 @@
     // justify-content: space-between;
     // background-color: #F4F5F7 ;
     background:#435df8;
-    box-shadow: inset -2px -2px 25px 0 rgb(255 255 255 / 40%);
+    // $v : 255 255 255;
+    // @include box-shadow( inset -2px -2px 25px 0 rgb(var($v)));
+    // @include box-shadow(inset -2px -2px 25px 0 rgb($v));
     backdrop-filter: blur(6px);
     z-index: 4;
     opacity: 0.9;    
@@ -17,6 +20,9 @@
 
 .Main-Nav{
     width: 15.8rem;
+    @include responsive(desktop,medium){
+        padding-left: 1rem
+    }
 
 
 }
@@ -24,6 +30,10 @@
     display: flex;
     align-self: center;
     justify-content: center;
+    @include responsive(desktop,medium){
+        display: none;
+       
+    }
    
 }
 
@@ -32,8 +42,22 @@
     justify-content: space-between;
     list-style: none;
     width: auto;
-
+   
     
+}
+.menu-icon{
+    display: flex ;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    color: #ADEAD2;
+    transition: all 0.5s;
+    padding-right: 1rem;
+
+
+    @media only screen and (min-width: 767px) {
+        display: none;
+    }
 }
 .Item{
     text-transform: capitalize;

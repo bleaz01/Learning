@@ -1,18 +1,12 @@
 
-
+@import "../../../lib/sass/abstract/mixins";
 .Verb-container{
     display: flex;
     flex-direction: row;
   
 }   
-.Verb-Main{
-    
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    border-radius: 20px 0px 0px 20px;
-    background-color: #Ffff ;
+.Verb-Main{ 
+    @include main
 
 }
 .Verb-header{

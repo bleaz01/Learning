@@ -1,11 +1,45 @@
+@import '../../../lib/sass/abstract/mixins';
+
 .page-content{
   display: flex;
   flex-direction: row;
   height: 100vh;
   width: 16rem;
   background-color: #AECFE1;
+  @include responsive(desktop, large){
+    display: none;
+}
+ 
 }  
-
+.side{
+    width: 20rem;
+    // background-image: linear-gradient(134deg, #016AEA 0%, #BA0086 100%);    
+    overflow: hidden;
+    @include responsive(desktop, large){
+      width: 10rem;
+    }
+   
+}
+.sideBar-list-icon{
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media only screen and (min-width: 1023px) {
+    display: none;
+}
+}
+.list-icon{
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #435df8;
+  opacity: 0.5;
+}
 
 .sideBar-content{
     background-color: #f2f2f2;
@@ -87,7 +121,9 @@
   margin: 1rem;
   background: rgba(223,255,251,0.50);
   border: 2px solid rgba(255,255,255,0.50);
-  box-shadow: inset -2px -2px 25px 0 rgb(255 255 255 / 80%);
+  // --v : 255 255 255 / 80%;
+  // @include box-shadow( inset -2px -2px 25px 0 rgba(var(--v)));
+  // @include box-shadow(inset -2px -2px 25px 0 rgb($v));
   border-radius: 20px;
   backdrop-filter: blur(6px);
   z-index: 4;
