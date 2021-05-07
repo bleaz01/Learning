@@ -7,7 +7,6 @@ import configStore from './lib/redux/store'
 // import {store} from './lib/redux/reducers'
 import reportWebVitals from './reportWebVitals';
 import { ApolloClient,ApolloProvider, InMemoryCache } from '@apollo/client';
-import ApexCharts from 'apexcharts'
 
 
 const client = new ApolloClient({

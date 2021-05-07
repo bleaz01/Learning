@@ -16,7 +16,7 @@ const Home = () => {
   // console.dir(data)
   return (
     <div className="Home-container">
-      <div className="side">
+      {/* <div className="side"> */}
         <SideBar>
           <div className="sideBar-items">
             <div className="sideBar-icon">
@@ -31,7 +31,7 @@ const Home = () => {
             <p>Een stuk samevading</p>
           </div>
         </SideBar>
-      </div>
+      {/* </div> */}
 
       <div className="Home-main">
         <Post />

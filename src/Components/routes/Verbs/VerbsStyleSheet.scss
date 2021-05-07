@@ -6,22 +6,27 @@
   
 }   
 .Verb-Main{
-    height: 100%;
+    
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: auto;
+    border-radius: 20px 0px 0px 20px;
+    background-color: #Ffff ;
+
 }
 .Verb-header{
+    // padding: 5px 0;
     flex-basis: 20%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    border-radius: 20px 0px 0px 20px;
     align-items: flex-start;
-    background-color: dimgrey;
+    background-color: white;
 }
 
 .Forms{
-    margin-left: 10px ;
+    // margin-left: 10px ;
     width: 300px;
     border: none;
         
@@ -48,7 +53,9 @@ h4{
     padding: 5px 10px
     
 }
-
+.Verb-forms{
+    padding: 0.8rem 2rem;
+}
         
 .Verb-content{
     display: flex;

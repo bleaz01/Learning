@@ -29,16 +29,19 @@ const Verbs = () =>{
     )
     return (
         <div className='Verb-container'>
-            <SideBar>
-                Verbum
-            </SideBar >
+            <div className="side">
+                <SideBar>
+                    Verbum
+                </SideBar >
+            </div>
           <div className="Verb-Main">
-          {data &&  <div className='Verb-header'>
-                    <div className="Verb-forms">     
-                        <SearchForm
-                        dataSearch={data}
-                        />
-                    </div>
+          {data && 
+           <div className='Verb-header'>
+                <div className="Verb-forms">     
+                    <SearchForm
+                    dataSearch={data}
+                    />
+                </div>
             </div>}
             <div className='Verb-body'>
                 <div className='Verb-banner'>
@@ -50,7 +53,6 @@ const Verbs = () =>{
                        />
                 </div>
             </div>
-           
             <div className='Verb-footer'>
                 
             </div>

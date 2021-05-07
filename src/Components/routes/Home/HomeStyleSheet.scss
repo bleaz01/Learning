@@ -1,8 +1,9 @@
 .Home-container {
     display: flex;
-    flex-direction: row;
+    // flex-direction: row;
     overflow: hidden;
     height: 100vh;
+    width: 100%;
 }
 
 .Home-main {
@@ -11,4 +12,9 @@
     overflow: auto;
     margin: 0 auto;
     overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
+.Home-main::-webkit-scrollbar {
+    display: none;
+  }

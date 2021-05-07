@@ -27,14 +27,17 @@ const Vocabulary = () => {
       <div className="side">
         <SideBar>Messenger</SideBar>
       </div>
-      <div className="Voc-header">
-        <div className="Voc-main">
-          <SelectModal />
-        </div>
-        <div className="Voc-body">
-          <GetItem name={slug} />
+      <div className="Voc-main">
+        <div className="Voc-header">
+          <div className="Voc-img">
+            <SelectModal />
+          </div>
+          <div className="Voc-body">
+              <GetItem name={slug} />
+          </div>
         </div>
       </div>
+      
     </div>
   );
 };
