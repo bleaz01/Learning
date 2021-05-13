@@ -1,20 +1,31 @@
-import {gql} from '@apollo/client'
+import {gql,useQuery} from '@apollo/client'
 
-export const GET_USERS = gql`
 
-    query GetUsers{
-        user{
-            name
-            email
-        }
+export const GET_ALL_USER =gql`
+ 
+    query{
+      getUsers{
+        email
+      }
     }
-    # query ($user:String!){
-    #     user(user:$user){
-    #         id
-    #         name
-    #         email
-    #     }
-       
-	# } 
+  
+`;
+
+export const GET_USER = gql`
+
+  query user($email:String){
+    user(email:$email){
+      name, 
+      email
+    }
+  }
 
 `;
+
+// export function getUser (id){
+       
+//     const { loading, error, data } = useQuery(GET_USER, {
+//         variables: { id },
+//     })
+//     console.log(data, "getuser")
+// }

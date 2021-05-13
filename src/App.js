@@ -16,6 +16,8 @@ import NavBar from "./Components/NavBar/NavBar";
 import Chat from "./Components/Chat/Chat";
 import MyImg from "./assets/jeason.jpg";
 import SideBar from "./Components/layout/ModalSidebar/SideBar";
+import { useQuery } from "@apollo/client";
+import { GET_USER } from "./lib/apollo/queries";
 
 //Routes
 
@@ -29,20 +31,28 @@ const Messenger = lazy(() => import("./Components/routes/Messenger/Messenger"));
 
 function App() {
   const dispatch = useDispatch();
+
   const { handleAuthentication } = useAuthentication(dispatch);
 
   useEffect(() => {
     handleAuthentication();
   }, []);
-
+ 
   const user = useSelector(state => state.user);
+
+//   const {User,loading, erorr, data } = useQuery(GET_USER, {
+    
+//     variables: { email: "jeason@gmaim.com"},
+    
+//  })
+  // console.log(data,"getuser")
   console.log(user.user, "llouise");
   const [logged, setLogged] = useState(false);
 
   return (
     <div className="App">
-      {user ? (
-        // logged?
+      {user.user ? (
+        //  logged?(
         <>
           <Router>
             <header className="App-header">

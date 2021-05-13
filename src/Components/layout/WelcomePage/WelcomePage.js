@@ -37,17 +37,7 @@ import Img2 from './section4-background.png'
 
 const WelcomePage =()=>{
 
-    const [modalLoginIsOpen,setLoginIsOpen] = useState(false);
-
-  
-    const openLoginModal =()=>{
-        setLoginIsOpen(true)
-
-    }
-  
-    const closeLoginModal =()=>{
-        setLoginIsOpen(false)
-    }
+   
 
    const section=[
        'one',
@@ -75,7 +65,7 @@ const WelcomePage =()=>{
                         suscipit quas? Nulla, placeat. 
                     </p>
                     <div>
-                        <Button onclick={openLoginModal} buttonStyles="color-blue">Begond</Button>
+                        <Button onclick={() => console.log('hello')} buttonStyles="color-blue">Begond</Button>
                     </div>
                 </div>
                 <div className="register-content">
@@ -146,17 +136,6 @@ const WelcomePage =()=>{
             <div className='Welcome-fouter'>
                     
             </div>
-           
-
-            
-    
-
-                              {/* <-----Modal-Screen------> */}
-
-
-            <ModalBase closeModal={closeLoginModal} modalIsOpen={modalLoginIsOpen}>
-                <LoginForm/>
-            </ModalBase>
           
         </div>
       
