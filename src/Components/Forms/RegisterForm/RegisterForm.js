@@ -11,7 +11,7 @@ import GoogleBtn from "./GoogleBtn";
 import LoginForm from "../LoginForm/LoginForm";
 import ModalBase from "../../Modals/Modal/ModalBase";
 
-import imgProfile from "../../../assets/img-profil.png"
+import imgProfil from "../../../assets/img-profil.png"
 
 import "./RegisterFormStyleSheet.scss";
 
@@ -28,7 +28,7 @@ const RegisterForm = () => {
 
     const newUser = {
      ...data,
-     password:undefined
+     imgProfil
     }
 
     

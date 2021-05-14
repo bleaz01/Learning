@@ -12,14 +12,16 @@ import { GET_USER } from "../../apollo/queries"
 
 
 const useAuthentication = (dispatch) =>{
-    // const [addUser, { data }] = useMutation(ADD_USER);
+    const [addUser,{}] = useMutation(ADD_USER);
     const [getUser, { loading, data }] = useLazyQuery(GET_USER);
 
    
     if(data){
         dispatch(handleLogin(data))
     }
-    function handleUserRegistration(newUser){     
+    function handleUserRegistration(newUser){   
+        console.log(newUser, '=> DB')
+
         return new Promise((resolve =>{
             app.emailPasswordAuth
             .registerUser(newUser.email, newUser.password)
@@ -28,7 +30,7 @@ const useAuthentication = (dispatch) =>{
                 app.logIn(credentials)
                 .then(user =>{
                    const profile = user._profile.data
-                    // addUser({ variables: { email: newUser.email, name:newUser.name, role:newUser.role, imgProfil:newUser.imgProfil } });
+                    addUser({ variables: { email: newUser.email, name: newUser.name, role: newUser.role, imgProfil: newUser.imgProfil } });
                     dispatch(handleLogin({...newUser, password:undefined}))
                     resolve(profile)
                 })
@@ -48,8 +50,8 @@ const useAuthentication = (dispatch) =>{
             .then(async () =>{
 
                 const currentUser = await app.currentUser;
-                getUser({variables: { email: "ezlzorelzmfkldskfd"}})
-                 
+                let userEmail = currentUser._profile.data.email
+                getUser({variables: { email: userEmail}})  
                 resolve(currentUser)
 
             })

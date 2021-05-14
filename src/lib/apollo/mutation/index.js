@@ -1,15 +1,19 @@
 import {gql} from '@apollo/client'
 
 export const ADD_USER = gql`
-    mutation AddUser($email: String!, $name:String!, $role:String!, $imgProfil:String!) {
-    addUser(email:$email, role:$role, name:$name, imgProfil:$imgProfil) {
+  
+  mutation addUser($name:String!, $email:String!, $role:String!, $imgProfil:String!)
+  {
+    addUser(name:$name, email:$email, role:$role, imgProfil:$imgProfil)
+    {
       name,
       email,
       role,
-      imgProfil,
+      imgProfil
     }
   }
 `
+
 
 // export const HANGLE_PROFILE = gql`
 
