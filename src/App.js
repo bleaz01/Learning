@@ -40,15 +40,9 @@ function App() {
  
   const user = useSelector(state => state.user);
 
-//   const {User,loading, erorr, data } = useQuery(GET_USER, {
-    
-//     variables: { email: "jeason@gmaim.com"},
-    
-//  })
-  // console.log(data,"getuser")
   console.log(user.user, "llouise");
   const [logged, setLogged] = useState(false);
-
+  // if(user.user.[])
   return (
     <div className="App">
       {user.user ? (

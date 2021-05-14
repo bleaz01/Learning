@@ -42,8 +42,7 @@ const useAuthentication = (dispatch) =>{
        
         }))
     }
-    async function handleUserLogin( email, password){
-
+    async function handleUserLogin(email, password){
         return new Promise((resolve)=>{
             app
             .logIn(Realm.Credentials.emailPassword(email,password))
@@ -63,7 +62,10 @@ const useAuthentication = (dispatch) =>{
     }
     async function handleUserLogout(){
         console.dir(app.currentUser);
-        app.currentUser ?.logOut().then(()=>console.log( "user log out"))
+        app.currentUser ?.logOut().then(()=>{
+            dispatch(handleLogout())
+            console.log( "user log out")
+        })
         .catch((err)=>console.log(err))
         handleLogout()
     }

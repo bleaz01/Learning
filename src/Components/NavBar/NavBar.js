@@ -26,7 +26,8 @@ const NavBar = ({user})=>{
 
     const logout = () => {
         handleUserLogout()
-        setTimeout(() => window.location.reload(),2000)
+        
+        // setTimeout(() => window.location.reload(),2000)
     }
 
     const [listItems, setListItems] = useState([

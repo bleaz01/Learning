@@ -21,11 +21,10 @@ const LoginForm = ()=>{
 
             const userEmail = data.email
             const userPassword = data.password
-            // addUser({ variables: { email: data.eamil, password:data.password } });
             handleUserLogin(userEmail, userPassword).then((currentUser) => {
                 currentUser && console.log(currentUser,"store redux user connecté")
 
-            })
+            }).catch(err=> console.log(err))
            
 
         }
