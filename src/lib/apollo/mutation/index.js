@@ -15,14 +15,17 @@ export const ADD_USER = gql`
   
 `
 
-export const CREATE_POST =gql`
+export const CREATE_POST = gql`
 
-  mutation createPost($title:String!, $body:String,  $comment:String!, $userId:String!, $date:String!)
+  mutation createPost($title:String!, $body:String!,  $comment:String!, $userId:String!, $date:String!)
     {
       createPost(title:$title, body:$body, comment:$comment, userId:$userId, date:$date)
       {
-        comment, 
+         
         title,
+        body,
+        comment,
+        userId,
         date,
        
       }

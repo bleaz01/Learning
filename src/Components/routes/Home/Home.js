@@ -1,16 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SideBar from "../../layout/ModalSidebar/SideBar";
 import "./HomeStyleSheet.scss";
 import Post from "../../Item/Post/Post";
 import {useDispatch, useSelector} from "react-redux"
 import CreatePostModal from "../../Modals/CreatePostModal/CreatePostModal";
 import ModalBase from "../../Modals/Modal/ModalBase";
+import { GET_POST } from "../../../lib/apollo/queries";
+import { useLazyQuery, useQuery } from "@apollo/client";
 
 
 const Home = () => {
   const dispatch = useDispatch()
   const [modalIsOpen,setIsOpen] = useState(true);
+  const { loading, error, data } = useQuery(GET_POST);
 
+  // const [getPost, { loading, data }] = useLazyQuery(GET_POST);
+  useEffect(()=>{
+      console.log(data, "ddd")
+  },[])
+  // getPost()
+  console.log(data.post, "ddd2")
+  const posts = data.post
   let user = useSelector(state => state.user);
   user = user.user
 
@@ -33,7 +43,7 @@ const closeModal = () =>{
   return (
     <div className="Home-container">
        <ModalBase closeModal={closeModal} modalIsOpen={modalIsOpen}>
-        <CreatePostModal user={user}/>
+        <CreatePostModal  closeModal={closeModal} user={user}/>
       </ModalBase>
       {/* <div className="side"> */}
         <SideBar>
@@ -53,7 +63,13 @@ const closeModal = () =>{
       {/* </div> */}
 
       <div className="Home-main">
-        <Post />
+        {posts && posts.map( post => {
+          return(
+            <Post post={post} />
+          )
+        })
+        }
+        
       </div>
      
 

@@ -6,21 +6,23 @@ import Button from '../../Item/Button/Button';
 import Input from '../../Item/Input/Input';
 
 import './CreatePostModalStyleSheet.scss'
-const CreatePostModal = ({user}) =>{
+const CreatePostModal = ({user, closeModal}) =>{
     const { register, handleSubmit, watch, errors } = useForm();
-    const [CreatePost,{error}] = useMutation(CREATE_POST);
+    const [createPost,{error}] = useMutation(CREATE_POST);
 
-    console.dir(error)
+    // console.log(JSON.stringify(error, null, 2));
+    console.log(error)
     const onSubmit = data => {
 
         const newPost ={
             ...data,
             userId:user.user[0]._id,
-            date:"25/56/10"
+            date:"25/56/10",
+            // like:0
         }
 
-        // console.log(newPost,'nnn')
-        CreatePost({variables: { ...newPost}})
+        createPost({variables: { ...newPost}})
+        closeModal()
 
     }
     return(
