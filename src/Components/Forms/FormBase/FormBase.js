@@ -8,7 +8,8 @@ const FormBase = ( {
     name , 
     defaultValue,
     placeholder,
-    onchange
+    onchange,
+    children
 
 }) =>{
 
@@ -20,14 +21,15 @@ const FormBase = ( {
     return(
         <div className='FormBase-container'>
              <form className={StyleForm} onSubmit={handleSubmit(onSubmit)}>
-                <input 
+                {/* <input 
                     className={'FormBase-input'}
                     placeholder={placeholder}
                     name={'test'&& name} 
                     defaultValue={defaultValue && 'test'} 
                     onChange={onchange}
                     // ref={register} 
-                    />
+                    /> */}
+                    {children}
                     
             </form>  
         </div>
