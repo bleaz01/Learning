@@ -56,14 +56,7 @@ const Messenger = () => {
     i++;
   }, [4]);
   const renderVideo =() =>{
-    navigator.mediaDevices.getUserMedia({video:true, audio:true}).then((stream) => {
-      // console.log(stream)
-      setUserStream(stream)
-      if(video.current){
-        video.current = stream
-      }
-      console.log(video.current)      
-    })
+   
   }
   const renderTchat = () => {
     //    if(response){

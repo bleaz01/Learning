@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import configStore from './lib/redux/store'
+import { contextProvider } from './lib/socket-io/SocketContext';
 // import {store} from './lib/redux/reducers'
 import reportWebVitals from './reportWebVitals';
 import { ApolloClient,ApolloProvider, InMemoryCache } from '@apollo/client';
@@ -19,7 +20,9 @@ ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <Provider store={store}>
-        <App />
+        <contextProvider>
+          <App />
+        </contextProvider>
       </Provider>
     </ApolloProvider>  
   </React.StrictMode>,
