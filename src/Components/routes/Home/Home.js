@@ -5,22 +5,23 @@ import Post from "../../Item/Post/Post";
 import {useDispatch, useSelector} from "react-redux"
 import CreatePostModal from "../../Modals/CreatePostModal/CreatePostModal";
 import ModalBase from "../../Modals/Modal/ModalBase";
-import { GET_POST } from "../../../lib/apollo/queries";
+import { GET_POSTS } from "../../../lib/apollo/queries";
 import { useLazyQuery, useQuery } from "@apollo/client";
 
 
 const Home = () => {
   const dispatch = useDispatch()
-  const [modalIsOpen,setIsOpen] = useState(true);
-  const { loading, error, data } = useQuery(GET_POST);
+  const [modalIsOpen,setIsOpen] = useState(false);
+  const { loading, error, data } = useQuery(GET_POSTS);
 
-  // const [getPost, { loading, data }] = useLazyQuery(GET_POST);
-  useEffect(()=>{
-      console.log(data, "ddd")
-  },[])
-  // getPost()
-  console.log(data.post, "ddd2")
-  const posts = data.post
+
+    let posts 
+    
+    if(data){
+      posts = data.posts
+
+    }
+
   let user = useSelector(state => state.user);
   user = user.user
 
@@ -65,7 +66,7 @@ const closeModal = () =>{
       <div className="Home-main">
         {posts && posts.map( post => {
           return(
-            <Post post={post} />
+            <Post post={post}/>
           )
         })
         }

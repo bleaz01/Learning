@@ -27,21 +27,36 @@ export const GET_USER = gql`
   }
 
 `;
-export const GET_POST = gql`
+export const GET_POSTS = gql`
 
    
     query{
-      post
+      posts
       {
         date,
         comment,
         title,
         userId,
-        like
+        like,
+        comments{
+          body,
+          
+        }
       }
     }
 
 `;
+
+export const USER_POST =gql`
+
+  query userPost($userId:String){
+    userPost(userId:$userId)
+      {
+        imgProfil
+        name
+      }
+    }
+`
 
 
 // export function getUser (id){

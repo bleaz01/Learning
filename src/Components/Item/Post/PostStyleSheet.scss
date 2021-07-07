@@ -7,6 +7,7 @@
 .post-container {
     margin: 15px 0;
     display: flex;
+    padding: 10px;
     flex-direction: column;
     width: 30rem;
     height: 35rem;
@@ -24,20 +25,27 @@
     width: 30px;
     height: 30px;
     border-radius: 50px;
+    padding: 0 10px;
+}
+.user-name{
     padding-right: 5px;
 }
 
 .img-post {
     width: 100%;
     height: 100%;
-    padding-right: 5px;
 }
-
 .post-header {
     display: flex;
     width: auto;
     justify-content: space-between;
-    padding: 0.6rem 0.9rem;
+}
+.post-comment{
+    padding: 10px 0px;
+    width: 100%;
+    border-bottom: solid 0.5px 
+
+    
 }
 
 .post-user {
@@ -56,8 +64,17 @@
 }
 
 .post-footer {
+
     width: auto;
     height: 5%;
     display: flex;
+    flex-direction: column;
+    padding: 5px;
+
+}
+
+.post-actue{
+    display: flex;
     justify-content: space-between;
+
 }
