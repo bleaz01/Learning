@@ -18,6 +18,7 @@ import MyImg from "./assets/jeason.jpg";
 import SideBar from "./Components/layout/ModalSidebar/SideBar";
 import { useQuery } from "@apollo/client";
 import { GET_USER } from "./lib/apollo/queries";
+import { ContextProvider } from "./lib/socket-io/SocketContext";
 
 //Routes
 
@@ -69,7 +70,9 @@ function App() {
                       <Vocabulary />
                     </Route>
                     <Route path="/messenger">
-                      <Messenger />
+                      <ContextProvider>
+                          <Messenger />
+                      </ContextProvider>
                     </Route>
                     {/* <Route path="/Profile">
                       <Profile />

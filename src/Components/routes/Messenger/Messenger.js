@@ -26,8 +26,6 @@ const Messenger = () => {
   const [response, setResponse] = useState([]);
   const [theArray, setTheArray] = useState([]);
   const [userStream, setUserStream]= useState({});
-  const [me,setMe]= useState()
-  const [recevingCall, setRecevingCall]= useState()
   
 
   const { register, handleSubmit } = useForm();
@@ -36,15 +34,12 @@ const Messenger = () => {
 
   // let socketRef = useRef()
 
-  const video = useRef({})
 
   useEffect(() => {
 
     
     let i = 0;
-    socket.on('me',(id)=>{
-      setMe(id)
-    })
+    
     socket.on("confirmMessage", msg => {
       setTheArray(oldArray => [...oldArray, msg]);
     });
@@ -85,6 +80,7 @@ const Messenger = () => {
         <div className="Msg-header">Group Name</div>
         <div>
           <div className="video-content">
+            
             <VideoPlayer/>
               <Options>
                   <Notifications/>
