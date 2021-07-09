@@ -49,7 +49,7 @@ const ContextProvider = ({ children }) => {
   
       peer.signal(call.signal);
   
-      connectionRef.current.srcObject = peer;
+      connectionRef.current = peer;
     };
   
     const callUser = (id) => {
@@ -75,7 +75,7 @@ const ContextProvider = ({ children }) => {
     const leaveCall = () => {
       setCallEnded(true);
   
-      connectionRef.current.srcObject = null;
+      connectionRef.current.destroy();
   
       window.location.reload();
     };
